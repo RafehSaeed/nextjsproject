@@ -37,6 +37,9 @@ router.get('/gettopperformers',ctrlCoin);
 
 //globaldata
 
+router.get('/about',ctrlCoin);
+
+
 
 router.get('/globaldata',ctrlCoin);
 

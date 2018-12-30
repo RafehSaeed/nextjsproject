@@ -8,6 +8,10 @@ var Coin = require('../models/coin.js').CoinList;
 var GlobalData= require('../models/global.js').GlobalData;
 var CurrencyList= require('../models/currencies.js').CurrencyList;
 var helper = require('../helpers/helper.js');
+var next = require('next');
+var dev = process.env.NODE_DEV !== 'production' //true false
+var app = next({ dev })
+var handle = app.getRequestHandler() //part of next config
 
 //Returns the coins list in JSON format
 router.get('/coinlist',function(req,res) {
@@ -22,6 +26,16 @@ router.get('/coinlist',function(req,res) {
 		}
 	});
 });
+
+
+
+//Returns the coins list in JSON format
+router.get('/about', (req, res) => {
+	console.log('render')
+      return nextApp.render(req, res, '/about')
+  });
+
+
 
 
 //Returns the global data in JSON format
@@ -61,4 +75,4 @@ router.get('/gettopperformers',function(req,res) {
 		res.send(topworstperformers);
 	});
 });
-module.exports= router;
+module.exports= router;''

@@ -11,10 +11,10 @@ var passport = require('passport');
 var request = require("request");
 var redis = require('redis');
 var helper = require('./helpers/helper.js');
-const next = require('next');
-const dev = process.env.NODE_DEV !== 'production' //true false
-const nextApp = next({ dev })
-const handle = nextApp.getRequestHandler() //part of next config
+var next = require('next');
+var dev = process.env.NODE_DEV !== 'production' //true false
+global.nextApp = next({ dev })
+var handle = nextApp.getRequestHandler() //part of next config
 
 // Create Redis Client that can be used globally 
 global.client = redis.createClient();
@@ -39,7 +39,6 @@ require('./config/passport');
 var routesApi = require('./routes/index');
 // var app = express();
 
-
 nextApp.prepare().then(() => {
     const app = express()
 	app.use(function(req, res, next) {
@@ -52,8 +51,8 @@ nextApp.prepare().then(() => {
   
     app.get('*', (req,res) => {
         return handle(req,res) // for all the react stuff
-       });
-    
+    });
+
 	var port = 5000; 
 
 	app.listen(port,function(err) {
