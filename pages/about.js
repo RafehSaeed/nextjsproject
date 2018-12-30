@@ -1,9 +1,19 @@
 
-const about = (props) => (
+// Class About 
 
-	<div> 
-		<p>Hello This is about page </p>
-	</div>
-)
+export default class extends React.Component {
+  static async getInitialProps({query}) {
 
-export default about;
+    // const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
+    return { query }
+  }
+
+  render() {
+    return (
+      <div>
+       {this.props.query}
+      </div>
+    )
+  }
+}
+
