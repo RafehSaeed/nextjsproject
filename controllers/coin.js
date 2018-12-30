@@ -32,7 +32,7 @@ router.get('/coinlist',function(req,res) {
 //Returns the coins list in JSON format
 router.get('/about', (req, res) => {
 	console.log('render')
-      return nextApp.render(req, res, '/about' , {id:'ss'}, 'kkkkk')
+      return nextApp.render(req, res, '/about' , 'yoooo', 'kkkkk')
   });
 
 router.get('/about/:id', (req, res) => {
