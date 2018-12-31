@@ -13,6 +13,9 @@ var dev = process.env.NODE_DEV !== 'production' //true false
 var app = next({ dev })
 var handle = app.getRequestHandler() //part of next config
 
+//weather
+var weather = require('weather-js');
+
 //Returns the coins list in JSON format
 router.get('/coinlist',function(req,res) {
 	client.get('coinlist', function(err, result) {
@@ -31,13 +34,27 @@ router.get('/coinlist',function(req,res) {
 
 //Returns the coins list in JSON format
 router.get('/about', (req, res) => {
-	console.log('render')
-      return nextApp.render(req, res, '/about' , 'yoooo', 'kkkkk')
+	// console.log('render')
+	console.log(req);
+      return nextApp.render(req, res, '/about-landing' , { data: 'No parameter for this route', value: false, message: 'This is a static route!'})
   });
 
 router.get('/about/:id', (req, res) => {
-	console.log('render')
-      return nextApp.render(req, res, '/about' , req.params.id)
+
+		var weatherResults = null;
+
+		weather.find({search: req.params.id, degreeType: 'C'}, function(err, result) {
+		  if(err) console.log(err);
+		  
+		  weatherResults = result[0];
+
+  	  return nextApp.render(req, res, '/about' , { 
+		  	data: req.params.id, 
+		  	value: false, 
+		  	message: 'Paramater Found!',
+		  	weather: weatherResults
+		  })
+		});
   });
 
 
