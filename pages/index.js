@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
-import fetch from 'isomorphic-unfetch'
+// import fetch from 'isomorphic-unfetch'
 
 
 // Index.getInitialProps = async function(query) {
@@ -23,8 +23,8 @@ class Index extends React.Component {
 
 	static async getInitialProps({query}) {
 
-	  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
-	  const data = await res.json()
+	  // const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
+	  // const data = await res.json()
 
 		//WORKS should return some data from ^^ API
 	  // return {
