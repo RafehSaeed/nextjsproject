@@ -73,13 +73,13 @@ const Header = () => (
 
     	<div className="main-menu">
 	      <Link href="/">
-	        <a style={linkStyle.default}>Home</a>
+	        <a style={linkStyle.default}>Sign-up</a>
 	      </Link>
 	      <Link href="/sign-up">
-	        <a style={linkStyle.default}>About</a>
+	        <a style={linkStyle.default}>Login</a>
 	      </Link>
 	      <Link href="/map">
-	        <a style={linkStyle.bold}>View MAP</a>
+	        <a style={linkStyle.bold}>Become A Service Provider</a>
 	      </Link>
 
 	    </div>
