@@ -35,7 +35,7 @@ router.get('/coinlist',function(req,res) {
 //Returns the coins list in JSON format
 router.get('/about', (req, res) => {
 	// console.log('render')
-	console.log(req);
+
       return nextApp.render(req, res, '/about-landing' , { data: 'No parameter for this route', value: false, message: 'This is a static route!'})
   });
 
@@ -56,6 +56,18 @@ router.get('/about/:id', (req, res) => {
 		  })
 		});
   });
+
+
+router.get('/', (req, res) => {
+
+console.log( 'i am here')
+  	  return nextApp.render(req, res, '/index' , { 
+		  	data: 'i', 
+		  	value: false, 
+		  	message: 'Paramater Found!'
+		  })
+		});
+
 
 
 
