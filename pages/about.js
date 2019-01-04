@@ -1,7 +1,7 @@
 
-// Class About 
+// Class About
 
-export default class extends React.Component {
+export default class AboutPage extends React.Component {
   static async getInitialProps({query}) {
     // console.log('-----------');
     // console.log(query);
@@ -20,56 +20,41 @@ export default class extends React.Component {
 
 
     }else {
+      const weatherForecast = this.props.query.weather.forecast;
+      var CurrentTempAndLoc = (<div><h1>Weather for {this.props.query.weather.location.name}</h1>
+            <h4>Currently {this.props.query.weather.current.temperature} C and {this.props.query.weather.current.skytext}</h4></div>);
 
+      var DailyTemp = weatherForecast.map( rows => {
+        console.log(rows);
+        return (
+          <div key={rows.date} className="results-flex-row">
 
-    const weatherForecast = this.props.query.weather.forecast;
+          <style jsx>{`
+            .results-flex-row {
+              box-sizing: border-box;
+              flex-grow: 1;
+              background-color: white;
+              width: 33.66666666667%;
+              margin: 15px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+              padding: 10px;
+              -webkit-box-shadow: 0px 4px 2px -2px rgba(217,217,217,1);
+              -moz-box-shadow: 0px 4px 2px -2px rgba(217,217,217,1);
+              box-shadow: 0px 4px 2px -2px rgba(217,217,217,1);
+            }
+          `}</style>
+            <div>Date: {rows.date}</div>
+            <div>{rows.skytextday}</div>
+            <div>Low of {rows.low} C</div>
+            <div>High of {rows.high} C</div>
+          </div>
+        )
 
-    var CurrentTempAndLoc = (<div><h1>Weather for {this.props.query.weather.location.name}</h1>
-          <h4>Currently {this.props.query.weather.current.temperature} C and {this.props.query.weather.current.skytext}</h4></div>);
-
-    var DailyTemp = weatherForecast.map( rows => {
-
-
-      console.log(rows);
-
-      return (
-        <div key={rows.date} className="results-flex-row">
-
-        <style jsx>{`
-          .results-flex-row {
-            box-sizing: border-box;
-            flex-grow: 1;
-            background-color: white;
-            width: 33.66666666667%;
-            margin: 15px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding: 10px;
-            -webkit-box-shadow: 0px 4px 2px -2px rgba(217,217,217,1);
-            -moz-box-shadow: 0px 4px 2px -2px rgba(217,217,217,1);
-            box-shadow: 0px 4px 2px -2px rgba(217,217,217,1);
-
-          }
-
-        `}</style>
-
-
-          <div>Date: {rows.date}</div>
-          <div>{rows.skytextday}</div>
-          <div>Low of {rows.low} C</div>
-          <div>High of {rows.high} C</div>
-        </div>
-      )
-
-    });
-
+      });
     }
 
-
-
-
     return (
-
       <div className='wrapper'>
         <style jsx>{`
 
@@ -82,8 +67,8 @@ export default class extends React.Component {
           dl, dt, dd, ol, ul, li,
           fieldset, form, label, legend,
           table, caption, tbody, tfoot, thead, tr, th, td,
-          article, aside, canvas, details, embed, 
-          figure, figcaption, footer, header, hgroup, 
+          article, aside, canvas, details, embed,
+          figure, figcaption, footer, header, hgroup,
           menu, nav, output, ruby, section, summary,
           time, mark, audio, video {
             margin: 0;
@@ -94,7 +79,7 @@ export default class extends React.Component {
             vertical-align: baseline;
           }
           /* HTML5 display-role reset for older browsers */
-          article, aside, details, figcaption, figure, 
+          article, aside, details, figcaption, figure,
           footer, header, hgroup, menu, nav, section {
             display: block;
           }
@@ -117,7 +102,6 @@ export default class extends React.Component {
             border-collapse: collapse;
             border-spacing: 0;
           }
-
 
           /*********
           *
@@ -163,7 +147,7 @@ export default class extends React.Component {
              align-items: stretch;
           }
         `}</style>
-      
+
         <div className='wrapper-contained'>
          <div className='weather-container'>
           {CurrentTempAndLoc}

@@ -1,7 +1,7 @@
 
-// Class About 
+// Class About
 
-export default class extends React.Component {
+export default class AboutLanding extends React.Component {
   static async getInitialProps({query}) {
     // console.log('-----------');
     // console.log(query);
@@ -27,8 +27,8 @@ export default class extends React.Component {
           dl, dt, dd, ol, ul, li,
           fieldset, form, label, legend,
           table, caption, tbody, tfoot, thead, tr, th, td,
-          article, aside, canvas, details, embed, 
-          figure, figcaption, footer, header, hgroup, 
+          article, aside, canvas, details, embed,
+          figure, figcaption, footer, header, hgroup,
           menu, nav, output, ruby, section, summary,
           time, mark, audio, video {
             margin: 0;
@@ -39,7 +39,7 @@ export default class extends React.Component {
             vertical-align: baseline;
           }
           /* HTML5 display-role reset for older browsers */
-          article, aside, details, figcaption, figure, 
+          article, aside, details, figcaption, figure,
           footer, header, hgroup, menu, nav, section {
             display: block;
           }
@@ -62,7 +62,6 @@ export default class extends React.Component {
             border-collapse: collapse;
             border-spacing: 0;
           }
-
 
           /*********
           *
@@ -108,7 +107,7 @@ export default class extends React.Component {
              align-items: stretch;
           }
         `}</style>
-      
+
         <div className='wrapper-contained'>
          <div className='weather-container'>
           <h3>Try entering a city /about/[City Name]</h3>
