@@ -1,4 +1,6 @@
-
+import Link from 'next/link'
+import Header from '../components/nav/Header'
+import Layout from '../components/nav/Layout'
 // Class About
 
 export default class AboutLanding extends React.Component {
@@ -14,106 +16,112 @@ export default class AboutLanding extends React.Component {
 
 
     return (
+        <Layout>
+            <div className='wrapper'>
+                <style jsx>{`
+                .container {
+                    z-index: 2;
+                    overflow: hidden;
+                    width: calc(100% - 40px);
+                    margin: 0 auto;
+                    position: relative;
+                  }
+                  .hero-wrapper {
+                    position: relative;
+                  }
+                  .left-side {
+                    float: left;
+                    // padding-top: 150px;
+                    width: 50%;
+                    display: inline-block
+                  }
+                  .intro-text {
+                    margin-left: 30%;
+                    width: 80%;
+                    margin-top: 75px;
+                    font-weight: 700;
+                    font-size: 33px;
+                  }
+                  .body-text {
+                    box-sizing: border-box;
+                    clear: both;
+                    width: 100%;
+                    margin: 0 auto;
+                    display: block;
+                    padding: 10px;
+                    padding-bottom: 60px;
+                    padding-left: 0;
+                    margin-left: 15%;
+                    margin-top: 25px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #777;
+                    line-height: 1.43;
+                  }
 
-      <div className='wrapper'>
-        <style jsx>{`
+                  @media screen and (min-width: 768px) {
+                    .left-side {
+                      float: left;
+                      padding-top: 150px;
+                      width: 70%;
+                      display: inline-block
+                    }
+                    .intro-text {
+                      margin-left: 20%;
+                      margin-top: 75px;
+                      font-weight: 700;
+                      font-size: 63px;
+                    }
+                    .body-text {
+                      box-sizing: border-box;
+                      clear: both;
+                      width: 70%;
+                      margin-left: 14%;
+                      display: inline-block;
+                      margin-top: 50px;
+                      font-weight: 500;
+                      font-size: 23px;
+                      color: #777;
+                      padding: 0;
+                    }
+                  }
+                  @media screen and (min-width: 1024px) {
+                    .left-side {
+                      float: left;
+                      padding-top: 150px;
+                      width: 50%;
+                      display: inline-block
+                    }
+                    .intro-text {
+                      margin-left: 20%;
+                      margin-top: 75px;
+                      font-weight: 700;
+                      font-size: 63px;
+                    }
+                    .body-text {
+                      box-sizing: border-box;
+                      clear: both;
+                      width: 60%;
+                      margin-left: 10%;
+                      display: inline-block;
+                      margin-top: 50px;
+                      font-weight: 500;
+                      font-size: 23px;
+                      color: #777;
+                      padding: 0;
+                    }
+                  }
+                `}</style>
 
-          html, body, div, span, applet, object, iframe,
-          h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-          a, abbr, acronym, address, big, cite, code,
-          del, dfn, em, img, ins, kbd, q, s, samp,
-          small, strike, strong, sub, sup, tt, var,
-          b, u, i, center,
-          dl, dt, dd, ol, ul, li,
-          fieldset, form, label, legend,
-          table, caption, tbody, tfoot, thead, tr, th, td,
-          article, aside, canvas, details, embed,
-          figure, figcaption, footer, header, hgroup,
-          menu, nav, output, ruby, section, summary,
-          time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-          }
-          /* HTML5 display-role reset for older browsers */
-          article, aside, details, figcaption, figure,
-          footer, header, hgroup, menu, nav, section {
-            display: block;
-          }
-          body {
-            line-height: 1;
-            margin: 0;
-          }
-          ol, ul {
-            list-style: none;
-          }
-          blockquote, q {
-            quotes: none;
-          }
-          blockquote:before, blockquote:after,
-          q:before, q:after {
-            content: '';
-            content: none;
-          }
-          table {
-            border-collapse: collapse;
-            border-spacing: 0;
-          }
-
-          /*********
-          *
-          * Start CSS Styles
-          *
-          **********/
-
-          .wrapper {
-            width: 100%;
-            height: 100vh;
-            background-color: white;
-            font-family: 'Verdana', sans-serif;
-          }
-
-          .wrapper-contained {
-            box-sizing: border-box;
-            width: 80%;
-            min-height: 475px;
-            margin: 0 auto;
-            margin-top: 100px;
-            padding: 40px;
-            background-color: #f7f7f7;
-            -webkit-box-shadow: 0px 4px 2px -2px rgba(217,217,217,1);
-            -moz-box-shadow: 0px 4px 2px -2px rgba(217,217,217,1);
-            box-shadow: 0px 4px 2px -2px rgba(217,217,217,1);
-            margin-bottom: 100px;
-          }
-
-          h1 {
-            font-size: 36px;
-          }
-
-          h4 {
-            margin-top: 20px;
-            font-weight: 700;
-          }
-
-          .weather-grid {
-             display: flex; /* or inline-flex */
-             flex-directiokn: row;
-             flex-wrap: wrap;
-             justify-content: center;
-             align-items: stretch;
-          }
-        `}</style>
-
-        <div className='wrapper-contained'>
-         <div className='weather-container'>
-          <h3>Try entering a city /about/[City Name]</h3>
-         </div>
-        </div>
+            <div className="container">
+                <div className='wrapper-contained'>
+                    <div className='weather-container'>
+                        <h3>Try entering a city /about/[City Name]</h3>
+                    </div>
+                </div>
+            </div>
       </div>
+    </Layout>
     )
   }
 }

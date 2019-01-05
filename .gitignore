@@ -6,3 +6,4 @@ node_modules
 .next/server/static/development/pages/*
 .next/static/runtime/*
 .next/*/*/*
+.next
