@@ -2,3 +2,7 @@ node_modules
 .next/*/*
 .next/static/*
 .next/static/development/*
+.next/server/static/*
+.next/server/static/development/pages/*
+.next/static/runtime/*
+.next/*/*/*
