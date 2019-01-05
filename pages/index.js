@@ -1,21 +1,12 @@
 import Link from 'next/link'
-import Header from '../components/Header'
-import Layout from '../components/Layout'
+import Header from '../components/nav/Header'
+import Layout from '../components/nav/Layout'
+import Clock from '../components/Clock'
 import fetch from 'isomorphic-unfetch'
+import { inject, observer } from 'mobx-react'
 
-
-// Index.getInitialProps = async function(query) {
-//   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
-//   const data = await res.json()
-//
-//   // console.log(data);
-//   console.log(`Show data fetched. Count: ${data.length}`)
-//
-//   return {
-//     shows: data
-//   }
-// }
-
+@inject('store')
+@observer
 class Index extends React.Component {
 	constructor(props) {
 		super(props);
@@ -24,23 +15,17 @@ class Index extends React.Component {
 	static async getInitialProps({query}) {
 
 		console.log(query)
-	 //  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
-	 //  const data = await res.json()
-
-		// //WORKS should return some data from ^^ API
-	 //  return {
-	 //    shows: data
-	 //  }
-		// // Try inside componentDidMount function console.log shows
 
 		return { query }
 	}
 
 	componentDidMount() {
-
-		console.log(this.props);
-
+		this.props.store.start()
 	}
+
+  componentWillUnmount() {
+    this.props.store.stop()
+  }
 
 
 	render(){
@@ -140,8 +125,6 @@ class Index extends React.Component {
 						}
 					}
 
-
-
 			`}</style>
 
 
@@ -150,11 +133,20 @@ class Index extends React.Component {
 				<div className="hero-wrapper">
 					<div className="left-side">
 						<div className="intro-text">Check us out again shortly.</div>
-
 					</div>
 				</div>
-				<div className="body-text">We are currently under construction. :(</div>
+
+				{/* ///Pulling name from the MOBX store => Check HomeStore */}
+				{/* ///Check HomeStore for getName function*/}
+				<div className="body-text">{this.props.store.getName} we are currently under construction. :(</div>
+
 			</div>
+
+			{/* ///MOBX Component using observables */}
+			<Clock
+				lastUpdate={this.props.store.lastUpdate}
+				light={this.props.store.light}
+			/>
 
 			</Layout>
 		)

@@ -12,11 +12,15 @@ var request = require("request");
 var redis = require('redis');
 var helper = require('./helpers/helper.js');
 var next = require('next');
+var mobxReact = require('mobx-react');
 var dev = process.env.NODE_DEV !== 'production' //true false
+
+mobxReact.useStaticRendering(true);
+
 global.nextApp = next({ dev })
 var handle = nextApp.getRequestHandler() //part of next config
 
-// Create Redis Client that can be used globally 
+// Create Redis Client that can be used globally
 global.client = redis.createClient();
 client.on('error', function(err){
   console.log('Something went wrong ', err)
@@ -48,12 +52,12 @@ nextApp.prepare().then(() => {
 	});
 	app.use(bodyParser.json({type: 'application/json'}));
 	app.use('/', routesApi);
-  
+
     app.get('*', (req,res) => {
         return handle(req,res) // for all the react stuff
     });
 
-	var port = 5000; 
+	var port = 5000;
 
 	app.listen(port,function(err) {
 		console.log('Running server on port '+ port);
@@ -83,7 +87,7 @@ nextApp.prepare().then(() => {
 // });
 // };
 
-// // Set Currency List 
+// // Set Currency List
 // var setCurrencyList  = function() {
 // 	// Currencies to show
 // 	var currencyparams = 'CAD,AUD,BGN,BRL,CHF,CNY,CZK,DKK,GBP,HRK,HKD,HUF,IDR,ILS,INR,JPY,KRW,MXN,MYR,NOK,NZD,PHP,PLN,RON,RUB,SEK,SGD,THB,TRY,ZAR,EUR'
@@ -127,7 +131,7 @@ nextApp.prepare().then(() => {
 // });
 // };
 
-// var setLanguages= function (languages){	
+// var setLanguages= function (languages){
 // 	languages.map(function(n){
 // 	var language = new Language({symbol: n});
 // 	language.save(function(err,language) {
@@ -147,5 +151,3 @@ nextApp.prepare().then(() => {
 // setInterval(setCoinList,240000);
 // setInterval(setCurrencyList,18000000);
 // setInterval(setGlobalData,86400000);
-
-

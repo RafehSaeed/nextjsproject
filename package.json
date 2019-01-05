@@ -17,6 +17,8 @@
     "http": "0.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "jsonwebtoken": "^8.4.0",
+    "mobx": "^5.8.0",
+    "mobx-react": "^5.4.3",
     "mongodb": "^2.2.36",
     "mongoose": "^4.13.17",
     "next": "^7.0.2",
@@ -30,5 +32,9 @@
     "redis-server": "^1.2.2",
     "request": "^2.88.0",
     "weather-js": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.0"
   }
 }
