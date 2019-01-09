@@ -139,7 +139,9 @@ class Index extends React.Component {
 				{/* ///Pulling name from the MOBX store => Check HomeStore */}
 				{/* ///Check HomeStore for getName function*/}
 				<div className="body-text">{this.props.store.getName} we are currently under construction. :(</div>
-
+				<div className="body-text">
+					<CategoryList categories={this.props.query}/>
+				</div>
 			</div>
 
 			{/* ///MOBX Component using observables */}
@@ -154,6 +156,25 @@ class Index extends React.Component {
 }
 
 
+var CategoryList = (props) =>{
+
+		return(
+			<div>
+				{props.categories.map( category => <Category key={category.category_id}  {...category}/>)}	
+			</div>
+		)
+}
+
+
+var Category = (props) =>{
+
+		return(
+			<div style={{ padding : 10}}>
+				<div>{props.category_id}</div>
+				<div>{props.categoryName}</div>		
+			</div>
+		)
+}
 
 
 export default Index

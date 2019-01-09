@@ -12,6 +12,7 @@ var next = require('next');
 var dev = process.env.NODE_DEV !== 'production' //true false
 var app = next({ dev })
 var handle = app.getRequestHandler() //part of next config
+var Category = require('../models/servicecategory.js').Category;
 
 //weather
 var weather = require('weather-js');
@@ -60,13 +61,15 @@ router.get('/about/:id', (req, res) => {
 
 router.get('/', (req, res) => {
 
-console.log( 'i am here')
-  	  return nextApp.render(req, res, '/index' , { 
-		  	data: 'i', 
-		  	value: false, 
-		  	message: 'Paramater Found!'
-		  })
-		});
+	// Get category information
+
+	Category.find(function (err,categories) {
+	  if (err) return console.error(err);
+	  console.log(categories)
+  	  return nextApp.render(req, res, '/index' , categories)
+	});
+
+});
 
 
 

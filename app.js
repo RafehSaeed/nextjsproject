@@ -14,6 +14,7 @@ var helper = require('./helpers/helper.js');
 var next = require('next');
 var mobxReact = require('mobx-react');
 var dev = process.env.NODE_DEV !== 'production' //true false
+var Category = require('./models/servicecategory.js').Category;
 
 mobxReact.useStaticRendering(true);
 
@@ -63,6 +64,55 @@ nextApp.prepare().then(() => {
 		console.log('Running server on port '+ port);
 	});
 })
+
+
+// Load data move to own folder later 
+
+var  createCategories = () => {
+
+	let categories =  [
+			{category_id: 'auto_repair' , categoryName: 'Auto Repair'}
+		,	{category_id: 'auto_main_care' , categoryName: 'Auto Maintainence and Care' }
+		,	{category_id: 'bridal_services' , categoryName: 'Bridal Services' }
+		,	{category_id: 'healths' , categoryName: 'Healths' }
+		,	{category_id: 'makeup_services' , categoryName: 'Make-up Services' }
+		,	{category_id: 'home_renovations' , categoryName: 'Home Renovations' }
+	];
+
+	categories.map(category => {
+		var category = new Category(category);
+		category.save((err,category)=> {
+			if(err){console.log(err)}
+			else {
+				console.log(category.getTitle + 'has been saved ')
+			}
+		})
+	});
+}
+
+createCategories();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
