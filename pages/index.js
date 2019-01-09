@@ -10,6 +10,10 @@ import { inject, observer } from 'mobx-react'
 class Index extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+    		categories: []
+		};
+
 	}
 
 	static async getInitialProps({query}) {
@@ -19,8 +23,14 @@ class Index extends React.Component {
 		return { query }
 	}
 
-	componentDidMount() {
+	async componentDidMount() {
 		this.props.store.start()
+
+		this.setState({
+				categories: this.props.query
+
+		});
+
 	}
 
   componentWillUnmount() {
@@ -139,9 +149,22 @@ class Index extends React.Component {
 				{/* ///Pulling name from the MOBX store => Check HomeStore */}
 				{/* ///Check HomeStore for getName function*/}
 				<div className="body-text">{this.props.store.getName} we are currently under construction. :(</div>
+				
+
+				{/*Categories */}
 				<div className="body-text">
-					<CategoryList categories={this.props.query}/>
+					<div>
+						{this.props.query.map( category => 
+							<div style={{border: 'solid'}}>
+								<div>{category.category_id}</div>
+								<div>{category.categoryName}</div>
+							</div>
+
+						)}	
+					</div>
 				</div>
+
+
 			</div>
 
 			{/* ///MOBX Component using observables */}
@@ -155,26 +178,7 @@ class Index extends React.Component {
 	}
 }
 
-
-var CategoryList = (props) =>{
-
-		return(
-			<div>
-				{props.categories.map( category => <Category key={category.category_id}  {...category}/>)}	
-			</div>
-		)
-}
-
-
-var Category = (props) =>{
-
-		return(
-			<div style={{ padding : 10}}>
-				<div>{props.category_id}</div>
-				<div>{props.categoryName}</div>		
-			</div>
-		)
-}
-
-
 export default Index
+
+
+

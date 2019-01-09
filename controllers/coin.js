@@ -65,7 +65,6 @@ router.get('/', (req, res) => {
 
 	Category.find(function (err,categories) {
 	  if (err) return console.error(err);
-	  console.log(categories)
   	  return nextApp.render(req, res, '/index' , categories)
 	});
 
