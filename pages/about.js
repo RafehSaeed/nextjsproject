@@ -13,10 +13,8 @@ export default class AboutPage extends React.Component {
 
     if(this.props.query.weather == null){
 
-
       var CurrentTempAndLoc = (<h1>Ooops!</h1>);
       var DailyTemp = (<div>No Valid City Found, Try Again!</div>)
-
 
     }else {
       const weatherForecast = this.props.query.weather.forecast;

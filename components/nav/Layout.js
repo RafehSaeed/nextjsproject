@@ -27,7 +27,6 @@ const Layout = (props) => {
       <meta charSet='utf-8' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' key="viewport"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" />
-      {/* <link rel="stylesheet" href="/static/styles.css" /> */}
       <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,400i,500,600,600i,700,800,900" rel="stylesheet"/>
     </Head>
 

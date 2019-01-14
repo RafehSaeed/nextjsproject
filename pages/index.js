@@ -32,7 +32,6 @@ class Index extends React.Component {
     this.props.store.stop()
   }
 
-
 	render(){
 		return (
 			<Layout>
@@ -44,8 +43,10 @@ class Index extends React.Component {
 						</div>
 					</div>
 
-					{/* ///Pulling name from the MOBX store => Check HomeStore */}
-					{/* ///Check HomeStore for getName function*/}
+					{/* ///Pulling name from the MOBX store => Check HomeStore
+						* Check HomeStore for getName function*
+						*/}
+
 					<div className="body-text">{this.props.store.getName} we are currently under construction. :(</div>
 
 					{/*Categories */}

@@ -13,7 +13,6 @@ export default class AboutLanding extends React.Component {
 
   render() {
 
-
     return (
         <Layout>
             <div className='wrapper'>
