@@ -4,7 +4,6 @@ import Layout from '../components/nav/Layout'
 import Clock from '../components/Clock'
 import fetch from 'isomorphic-unfetch'
 import { inject, observer } from 'mobx-react'
-import "../static/scss/index.scss";
 
 @inject('store')
 @observer
@@ -25,7 +24,11 @@ class Index extends React.Component {
 
 		this.setState({
 				categories: this.props.query
+		}, function(){
+			console.log(this);
 		});
+
+
 	}
 
   componentWillUnmount() {
@@ -37,27 +40,26 @@ class Index extends React.Component {
 			<Layout>
 				<div className="container">
 					{/* <span className="white-square"></span> */}
-					<div className="hero-wrapper">
+
+					{/* <div className="hero-wrapper">
 						<div className="left-side">
 							<div className="intro-text">Check us out again shortly.</div>
 						</div>
-					</div>
-
-					{/* ///Pulling name from the MOBX store => Check HomeStore
-						* Check HomeStore for getName function*
-						*/}
-
-					<div className="body-text">{this.props.store.getName} we are currently under construction. :(</div>
+					</div> */}
+{/*
+					<div className="body-text">{this.props.store.getName} we are currently under construction. :(</div> */}
 
 					{/*Categories */}
-					<div className="body-text">
-						<div>
+					<div className="view view-categories">
+						<div className="view-wrapper">
+
 							{this.props.query.map( category =>
-								<div style={{border: 'solid'}}>
-									<div className="example">{category.category_id}</div>
-									<div className="example">{category.categoryName}</div>
+								<div className="views-row">
+									{/* <div className="example red">{category.category_id}</div> */}
+									<div className="field-title">{category.categoryName}</div>
 								</div>
 							)}
+							
 						</div>
 					</div>
 				</div>
