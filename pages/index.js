@@ -51,6 +51,9 @@ class Index extends React.Component {
 
 					{/*Categories */}
 					<div className="view view-categories">
+
+						<div><h2 className="view-title">Browse the list of services available in your <span>city.</span></h2></div>
+
 						<div className="view-wrapper">
 
 							{this.props.query.map( category =>
@@ -59,9 +62,47 @@ class Index extends React.Component {
 									<div className="field-title">{category.categoryName}</div>
 								</div>
 							)}
-							
+
+						</div>
+						<div className="view-footer"><div className="view-more">View More Services</div></div>
+					</div>
+
+
+					<div className="view view-categories view-popular">
+
+						<div><h2 className="view-title">Popular Services</h2></div>
+
+						<div className="view-wrapper">
+
+							<div className="views-row">
+								<div className="field-image"><img src="/static/images/autorepair.jpg"/></div>
+								<div className="field-type">Auto Repairs</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+							</div>
+							<div className="views-row">
+								<div className="field-image"><img src="/static/images/tools.jpg"/></div>
+								<div className="field-type">Auto Maintenance</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+							</div>
+							<div className="views-row">
+								<div className="field-image"><img src="/static/images/grooming.jpg"/></div>
+								<div className="field-type">Men's Grooming</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+							</div>
+							<div className="views-row">
+								<div className="field-image"><img src="/static/images/room.png"/></div>
+								<div className="field-type">Home Repairs</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+							</div>
+							<div className="views-row">
+								<div className="field-image"><img src="/static/images/trainer.jpg"/></div>
+								<div className="field-type">Training & Fitness</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+							</div>
+							<div className="views-row">
+								<div className="field-image"><img src="/static/images/catering.jpg"/></div>
+								<div className="field-type">Mexican Food Catering or Meal Plans</div>
+								<div className="field-title">Mexican Food Catering or Meal Plans</div>
+							</div>
+
 						</div>
 					</div>
+
 				</div>
 
 				{/* ///MOBX Component using observables */}
