@@ -7,7 +7,9 @@ const linkStyle = {
 
 const Footer = () => (
     <div className="footer">
-    	<p>Copyright Jolt 2018. All Rights Reserved.</p>
+			<footer>
+    		<p>Copyright Jolt 2018. All Rights Reserved.</p>
+			</footer>
     </div>
 )
 

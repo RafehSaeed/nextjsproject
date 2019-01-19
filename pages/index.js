@@ -76,30 +76,81 @@ class Index extends React.Component {
 
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/autorepair.jpg"/></div>
-								<div className="field-type">Auto Repairs</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+								<div className="field-rating">
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+								</div>
+								<div className="field-type">Auto Repairs</div>						<div className="field-title">Restore Paint Job</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/tools.jpg"/></div>
-								<div className="field-type">Auto Maintenance</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+								<div className="field-rating">
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+								</div>
+								<div className="field-type">Auto Maintenance</div>						<div className="field-title">Vehicly Winter Service</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/grooming.jpg"/></div>
-								<div className="field-type">Men's Grooming</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+								<div className="field-rating">
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+								</div>
+								<div className="field-type">Men's Grooming</div>						<div className="field-title">Haircut & Beard</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/room.png"/></div>
-								<div className="field-type">Home Repairs</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+								<div className="field-rating">
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+								</div>
+								<div className="field-type">Home Repairs</div>						<div className="field-title">Finish your basement</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/trainer.jpg"/></div>
-								<div className="field-type">Training & Fitness</div>						<div className="field-title">Mexican Food Catering or Meal Plans</div>
+								<div className="field-rating">
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+								</div>
+								<div className="field-type">Training & Fitness</div>						<div className="field-title">Health Traininer - Fitness</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/catering.jpg"/></div>
-								<div className="field-type">Mexican Food Catering or Meal Plans</div>
+								<div className="field-rating">
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+								</div>
+								<div className="field-type">Food Catering</div>
 								<div className="field-title">Mexican Food Catering or Meal Plans</div>
 							</div>
-
+							<div className="views-row">
+								<div className="field-image"><img src="/static/images/autorepair.jpg"/></div>
+								<div className="field-rating">
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+								</div>
+								<div className="field-type">Auto Repairs</div>						<div className="field-title">Oil Change High-End Cars</div>
+							</div>
+							<div className="views-row">
+								<div className="field-image"><img src="/static/images/trainer.jpg"/></div>
+								<div className="field-rating">
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+								</div>
+								<div className="field-type">Training & Fitness</div>						<div className="field-title">Health Traininer - Fitness</div>
+							</div>
 						</div>
 					</div>
 
