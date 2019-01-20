@@ -66,7 +66,7 @@ nextApp.prepare().then(() => {
 })
 
 
-// Load data move to own folder later 
+// Load data move to own folder later
 
 var  createCategories = () => {
 
@@ -77,6 +77,19 @@ var  createCategories = () => {
 		,	{category_id: 'healths' , categoryName: 'Healths' }
 		,	{category_id: 'makeup_services' , categoryName: 'Make-up Services' }
 		,	{category_id: 'home_renovations' , categoryName: 'Home Renovations' }
+		,	{category_id: 'training_fitness' , categoryName: 'Training & Fitness' }
+		,	{category_id: 'event_planning' , categoryName: 'Event Planning & Organizing' }
+		,	{category_id: 'auto_care' , categoryName: 'Auto Care' }
+		,	{category_id: 'mobile_services' , categoryName: 'Cellular/Mobile Services' }
+		,	{category_id: 'grooming' , categoryName: 'Men Grooming' }
+		,	{category_id: 'grooming' , categoryName: 'Men Grooming' }
+		,	{category_id: 'home_care' , categoryName: 'Home Care' }
+		,	{category_id: 'home_repairs' , categoryName: 'Home Repairs' }
+		,	{category_id: 'home_improvements' , categoryName: 'Home Improvements' }
+		,	{category_id: 'painting' , categoryName: 'Painters' }
+		,	{category_id: 'electronics' , categoryName: 'Electronics' }
+		,	{category_id: 'makeup_artists' , categoryName: 'Make Up Artists' }
+		,	{category_id: 'auto_detailing' , categoryName: 'Auto Detailing' }
 	];
 
 	categories.map(category => {

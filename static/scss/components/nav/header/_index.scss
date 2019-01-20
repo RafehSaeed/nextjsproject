@@ -1,3 +1,8 @@
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .header-container {
   box-sizing: border-box;
   // max-width: 90%;
@@ -41,7 +46,7 @@
   .main-menu {
     text-align:right;
     display: inline-block;
-    width: 50%;
+    width: 80%;
     // background-color: white;
     float: right;
     margin-top:20px;

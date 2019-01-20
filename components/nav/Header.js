@@ -17,6 +17,7 @@ const linkStyle = {
 const Header = () => (
 
 	<div className="header-container">
+		<header>
     	<Link href="/"><a><span className="logo-branding">Jolt</span></a></Link>
     	<div className="main-menu">
 	      <Link href="/">
@@ -29,7 +30,8 @@ const Header = () => (
 	        <a style={linkStyle.bold}>Become A Service Provider</a>
 	      </Link>
 	    </div>
-    </div>
+		</header>
+  </div>
 )
 
 export default Header
