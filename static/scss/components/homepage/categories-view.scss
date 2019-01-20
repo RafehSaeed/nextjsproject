@@ -7,6 +7,10 @@
   padding-bottom: 50px;
   position: relative;
 
+  -webkit-box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
+  -moz-box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
+  box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
+
 }
 
 .view-categories {
@@ -19,6 +23,8 @@
 
     line-height: 1.6;
     color: #888888;
+    font-weight: 400;
+    font-size: 36px;
 
     @media screen and (min-width: 768px) {
       text-align: left;
