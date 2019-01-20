@@ -70,7 +70,7 @@ class Index extends React.Component {
 
 					<div className="view view-categories view-popular">
 
-						<div><h2 className="view-title">Popular Services</h2></div>
+						<div className="view-wrapper"><h2 className="view-title">Popular Services</h2></div>
 
 						<div className="view-wrapper">
 
@@ -83,7 +83,8 @@ class Index extends React.Component {
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 								</div>
-								<div className="field-type">Auto Repairs</div>						<div className="field-title">Restore Paint Job</div>
+								<div className="field-type">Auto Repairs</div>
+								<div className="field-title">Restore Paint Job</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/tools.jpg"/></div>
@@ -92,7 +93,8 @@ class Index extends React.Component {
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 								</div>
-								<div className="field-type">Auto Maintenance</div>						<div className="field-title">Vehicly Winter Service</div>
+								<div className="field-type">Auto Maintenance</div>
+								<div className="field-title">Vehicly Winter Service</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/grooming.jpg"/></div>
@@ -100,7 +102,8 @@ class Index extends React.Component {
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 								</div>
-								<div className="field-type">Men's Grooming</div>						<div className="field-title">Haircut & Beard</div>
+								<div className="field-type">Men's Grooming</div>
+								<div className="field-title">Haircut & Beard</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/room.png"/></div>
@@ -110,7 +113,8 @@ class Index extends React.Component {
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 								</div>
-								<div className="field-type">Home Repairs</div>						<div className="field-title">Finish your basement</div>
+								<div className="field-type">Home Repairs</div>
+								<div className="field-title">Finish your basement</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/trainer.jpg"/></div>
@@ -119,7 +123,8 @@ class Index extends React.Component {
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 								</div>
-								<div className="field-type">Training & Fitness</div>						<div className="field-title">Health Traininer - Fitness</div>
+								<div className="field-type">Training & Fitness</div>
+								<div className="field-title">Health Traininer - Fitness</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/catering.jpg"/></div>
@@ -140,7 +145,8 @@ class Index extends React.Component {
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 								</div>
-								<div className="field-type">Auto Repairs</div>						<div className="field-title">Oil Change High-End Cars</div>
+								<div className="field-type">Auto Repairs</div>
+								<div className="field-title">Oil Change High-End Cars</div>
 							</div>
 							<div className="views-row">
 								<div className="field-image"><img src="/static/images/trainer.jpg"/></div>
@@ -149,7 +155,8 @@ class Index extends React.Component {
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 									<img className="star-icon" src="/static/icons/star-icon.svg"/>
 								</div>
-								<div className="field-type">Training & Fitness</div>						<div className="field-title">Health Traininer - Fitness</div>
+								<div className="field-type">Training & Fitness</div>
+								<div className="field-title">Health Traininer - Fitness</div>
 							</div>
 						</div>
 					</div>
