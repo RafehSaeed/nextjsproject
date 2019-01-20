@@ -92,31 +92,6 @@ var  createCategories = () => {
 
 createCategories();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // BACKEND PROCESS NEEEDED
 // var setCoinList  = function() {
 // 	request('https://api.coinmarketcap.com/v1/ticker/?limit=0', function (error, response, body) {
