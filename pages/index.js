@@ -59,7 +59,7 @@ class Index extends React.Component {
 							{this.props.query.map( category =>
 								<div className="views-row">
 									{/* <div className="example red">{category.category_id}</div> */}
-									<div className="field-title">{category.categoryName}</div>
+									<div className="field-title">{category.categoryname}</div>
 								</div>
 							)}
 

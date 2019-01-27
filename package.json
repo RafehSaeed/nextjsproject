@@ -18,25 +18,28 @@
     "http": "0.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "jsonwebtoken": "^8.4.0",
-    "mobx": "^5.8.0",
+    "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "mongodb": "^2.2.36",
-    "mongoose": "^4.13.17",
+    "mongoose": "^4.13.18",
     "next": "^7.0.2",
+    "node-postgres-named": "^2.4.1",
     "node-rejson": "^0.1.0",
     "node-sass": "^4.11.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "pg": "^7.8.0",
     "ramda": "^0.25.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "redis": "^2.8.0",
     "redis-server": "^1.2.2",
     "request": "^2.88.0",
+    "sequelize": "^4.42.0",
     "weather-js": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-proposal-decorators": "^7.1.0"
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-decorators": "^7.3.0"
   }
 }

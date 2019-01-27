@@ -1,35 +1,33 @@
-var mongoose = require("mongoose");
+var db = require('../db/db.js');
+sequelize = db.getConnection();
+// extends base and import db connection in that 
+class ServiceCategory {
 
 
-// primary identifier category_id 
-var categorySchema = mongoose.Schema({
-		category_id: {
-			type:String , unique: true , required:true
-  		},
-  	  createtime: {type: Date, default: Date.now},
-      categoryDescription: String,
-      categoryName: String    
-    //  user: User
-  });
+    constructor(category_id , category_nm){
 
-//returns the title of the Category
-categorySchema.methods.getTitle = function  () {
-    return this.categoryName;
-};
+        this.category_id  = category_id;
+        this.category_nm = category_nm;
+    }
 
-//returns the html of the Category
-categorySchema.methods.getDescription = function  () {
-  return this.categoryDescription;
-};
+    // Returns all the categories for services 
+    static getServiceCategories(){
 
-//returns the html of the Category
-categorySchema.methods.getCreateTime = function  () {  
-  return this.createtime;
-};
+        var sql = `
+            SELECT category_id , category_nm as categoryName
+            FROM service_categories 
+        `;
+        var params = {};
 
-//exporting so can be used by app.js
-var Category = mongoose.model('Category',categorySchema);
+        return sequelize.query(sql,{ replacements: params , type: sequelize.QueryTypes.SELECT }
+        ).then(categories => {
+            return categories;
+        })
+
+
+    }
+}
 
 module.exports = {
-  Category: Category
+    ServiceCategory: ServiceCategory
 };

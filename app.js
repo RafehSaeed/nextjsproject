@@ -15,7 +15,8 @@ var next = require('next');
 var mobxReact = require('mobx-react');
 var dev = process.env.NODE_DEV !== 'production' //true false
 var Category = require('./models/servicecategory.js').Category;
-
+var db = require('./db/db.js');
+sequelize = db.getConnection();
 mobxReact.useStaticRendering(true);
 
 global.nextApp = next({ dev })
@@ -27,17 +28,19 @@ client.on('error', function(err){
   console.log('Something went wrong ', err)
 });
 
-mongoose.connect('mongodb://localhost/admin', {
-  keepAlive: true,
-  reconnectTries: Number.MAX_VALUE,
-  useMongoClient: true
-});
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('Database connection activated...');
-});
+
+// mongoose.connect('mongodb://localhost/admin', {
+//   keepAlive: true,
+//   reconnectTries: Number.MAX_VALUE,
+//   useMongoClient: true
+// });
+
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   console.log('Database connection activated...');
+// });
 
 require('./config/passport');
 
@@ -46,6 +49,7 @@ var routesApi = require('./routes/index');
 
 nextApp.prepare().then(() => {
     const app = express()
+
 	app.use(function(req, res, next) {
 		res.header("Access-Control-Allow-Origin", "*");
 		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -66,44 +70,48 @@ nextApp.prepare().then(() => {
 })
 
 
+
+
 // Load data move to own folder later
 
-var  createCategories = () => {
+// var  createCategories = () => {
 
-	let categories =  [
-			{category_id: 'auto_repair' , categoryName: 'Auto Repair'}
-		,	{category_id: 'auto_main_care' , categoryName: 'Auto Maintainence and Care' }
-		,	{category_id: 'bridal_services' , categoryName: 'Bridal Services' }
-		,	{category_id: 'healths' , categoryName: 'Healths' }
-		,	{category_id: 'makeup_services' , categoryName: 'Make-up Services' }
-		,	{category_id: 'home_renovations' , categoryName: 'Home Renovations' }
-		,	{category_id: 'training_fitness' , categoryName: 'Training & Fitness' }
-		,	{category_id: 'event_planning' , categoryName: 'Event Planning & Organizing' }
-		,	{category_id: 'auto_care' , categoryName: 'Auto Care' }
-		,	{category_id: 'mobile_services' , categoryName: 'Cellular/Mobile Services' }
-		,	{category_id: 'grooming' , categoryName: 'Men Grooming' }
-		,	{category_id: 'grooming' , categoryName: 'Men Grooming' }
-		,	{category_id: 'home_care' , categoryName: 'Home Care' }
-		,	{category_id: 'home_repairs' , categoryName: 'Home Repairs' }
-		,	{category_id: 'home_improvements' , categoryName: 'Home Improvements' }
-		,	{category_id: 'painting' , categoryName: 'Painters' }
-		,	{category_id: 'electronics' , categoryName: 'Electronics' }
-		,	{category_id: 'makeup_artists' , categoryName: 'Make Up Artists' }
-		,	{category_id: 'auto_detailing' , categoryName: 'Auto Detailing' }
-	];
+// 	let categories =  [
+// 			{category_id: 'auto_repair' , categoryName: 'Auto Repair'}
+// 		,	{category_id: 'auto_main_care' , categoryName: 'Auto Maintainence and Care' }
+// 		,	{category_id: 'bridal_services' , categoryName: 'Bridal Services' }
+// 		,	{category_id: 'healths' , categoryName: 'Healths' }
+// 		,	{category_id: 'makeup_services' , categoryName: 'Make-up Services' }
+// 		,	{category_id: 'home_renovations' , categoryName: 'Home Renovations' }
+// 		,	{category_id: 'training_fitness' , categoryName: 'Training & Fitness' }
+// 		,	{category_id: 'event_planning' , categoryName: 'Event Planning & Organizing' }
+// 		,	{category_id: 'auto_care' , categoryName: 'Auto Care' }
+// 		,	{category_id: 'mobile_services' , categoryName: 'Cellular/Mobile Services' }
+// 		,	{category_id: 'grooming' , categoryName: 'Men Grooming' }
+// 		,	{category_id: 'grooming' , categoryName: 'Men Grooming' }
+// 		,	{category_id: 'home_care' , categoryName: 'Home Care' }
+// 		,	{category_id: 'home_repairs' , categoryName: 'Home Repairs' }
+// 		,	{category_id: 'home_improvements' , categoryName: 'Home Improvements' }
+// 		,	{category_id: 'painting' , categoryName: 'Painters' }
+// 		,	{category_id: 'electronics' , categoryName: 'Electronics' }
+// 		,	{category_id: 'makeup_artists' , categoryName: 'Make Up Artists' }
+// 		,	{category_id: 'auto_detailing' , categoryName: 'Auto Detailing' }
+// 	];
 
-	categories.map(category => {
-		var category = new Category(category);
-		category.save((err,category)=> {
-			if(err){console.log(err)}
-			else {
-				console.log(category.getTitle + 'has been saved ')
-			}
-		})
-	});
-}
+// 	categories.map(category => {
+// 		var category = new Category(category);
+// 		category.save((err,category)=> {
+// 			if(err){console.log(err)}
+// 			else {
+// 				console.log(category.getTitle + 'has been saved ')
+// 			}
+// 		})
+// 	});
+// }
 
-createCategories();
+// createCategories();
+
+
 
 // BACKEND PROCESS NEEEDED
 // var setCoinList  = function() {
