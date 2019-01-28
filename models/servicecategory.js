@@ -3,9 +3,7 @@ sequelize = db.getConnection();
 // extends base and import db connection in that 
 class ServiceCategory {
 
-
     constructor(category_id , category_nm){
-
         this.category_id  = category_id;
         this.category_nm = category_nm;
     }
@@ -23,8 +21,6 @@ class ServiceCategory {
         ).then(categories => {
             return categories;
         })
-
-
     }
 }
 

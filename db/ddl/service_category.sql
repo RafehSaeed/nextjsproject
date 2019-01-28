@@ -1,8 +1,8 @@
-CREATE TABLE service_categories(
-	service_id int PRIMARY KEY,
-	service_nm varchar(80)
+CREATE TABLE public.service_categories (
+	category_id text NOT NULL,
+	category_nm varchar(80) NULL,
+	PRIMARY KEY (category_id)
 );
-
 
 -- Add service categories
 insert into service_categories(category_id,category_nm)
@@ -23,4 +23,4 @@ values('auto_repair','Auto Repair'),
 ( 'painting' , 'Painters' ),
 ( 'electronics' , 'Electronics' ),
 ( 'makeup_artists' , 'Make Up Artists' ),
-( 'auto_detailing' , 'Auto Detailing' )
+( 'auto_detailing' , 'Auto Detailing' );

@@ -21,7 +21,7 @@ function initDb(){
 		},
 	});
 
-	// Check connection established
+	// Check connection established 
 	sequelize
 		.authenticate()
 		.then(() => {

@@ -14,7 +14,7 @@ var app = next({ dev })
 var handle = app.getRequestHandler() //part of next config
 var ServiceCategory  = require('../models/servicecategory.js').ServiceCategory;
 
-//weather
+//Weather
 var weather = require('weather-js');
 
 //Returns the coins list in JSON format
@@ -31,8 +31,6 @@ router.get('/coinlist',function(req,res) {
 	});
 });
 
-
-
 //Returns the coins list in JSON format
 router.get('/about', (req, res) => {
     return nextApp.render(req, res, '/about-landing' ,
@@ -44,7 +42,7 @@ router.get('/about', (req, res) => {
   });
 
 router.get('/about/:id', (req, res) => {
-
+	
 		var weatherResults = null;
 
 		weather.find({search: req.params.id, degreeType: 'C'}, function(err, result) {
@@ -61,18 +59,12 @@ router.get('/about/:id', (req, res) => {
 		});
   });
 
-
+// Index page
 router.get('/', (req, res) => {
-
 	ServiceCategory.getServiceCategories().then(categories =>
 		nextApp.render(req, res, '/index' , categories)
 	);
-
-
 });
-
-
-
 
 //Returns the global data in JSON format
 router.get('/globaldata',function(req,res) {
@@ -88,7 +80,6 @@ router.get('/globaldata',function(req,res) {
 	});
 });
 
-
 //Returns the currency list in JSON format
 router.get('/currencylist',function(req,res) {
 		CurrencyList.findById('1', function (err, currency) {
@@ -103,6 +94,7 @@ router.get('/coinlistall',function(req,res) {
 	  res.send(coins);
 	});
 });
+
 //Returns the top performing coin in the last 24 hours
 router.get('/gettopperformers',function(req,res) {
 	Coin.findById('1', function (err, coin) {
