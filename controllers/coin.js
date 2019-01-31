@@ -13,6 +13,7 @@ var dev = process.env.NODE_DEV !== 'production' //true false
 var app = next({ dev })
 var handle = app.getRequestHandler() //part of next config
 var ServiceCategory  = require('../models/servicecategory.js').ServiceCategory;
+var Service  = require('../models/service.js').Service;
 
 //Weather
 var weather = require('weather-js');
@@ -61,9 +62,22 @@ router.get('/about/:id', (req, res) => {
 
 // Index page
 router.get('/', (req, res) => {
-	ServiceCategory.getServiceCategories().then(categories =>
-		nextApp.render(req, res, '/index' , categories)
-	);
+
+	// evaluate targets 
+	async function getData(){
+		let categories  = await ServiceCategory.getServiceCategories();
+		let services  = await Service.getServices();
+
+		let data =  {
+			categories : categories,
+			services : services
+		};
+
+		nextApp.render(req, res, '/index' , data);
+	}
+
+	// Trigger model calls 
+	getData();
 });
 
 //Returns the global data in JSON format

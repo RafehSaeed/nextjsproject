@@ -23,7 +23,7 @@ class Index extends React.Component {
 		this.props.store.start()
 
 		this.setState({
-				categories: this.props.query
+				categories: this.props.query.categories
 		}, function(){
 			console.log(this);
 		});
@@ -56,7 +56,7 @@ class Index extends React.Component {
 
 						<div className="view-wrapper">
 
-							{this.props.query.map( category =>
+							{this.props.query.categories.map( category =>
 								<div className="views-row">
 									{/* <div className="example red">{category.category_id}</div> */}
 									<div className="field-title">{category.categoryname}</div>
@@ -74,90 +74,21 @@ class Index extends React.Component {
 
 						<div className="view-wrapper">
 
-							<div className="views-row">
-								<div className="field-image"><img src="/static/images/autorepair.jpg"/></div>
-								<div className="field-rating">
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
+							{this.props.query.services.map( service =>
+								<div className="views-row">
+									<div className="field-image"><img src="/static/images/autorepair.jpg"/></div>
+									<div className="field-rating">
+										<img className="star-icon" src="/static/icons/star-icon.svg"/>
+										<img className="star-icon" src="/static/icons/star-icon.svg"/>
+										<img className="star-icon" src="/static/icons/star-icon.svg"/>
+										<img className="star-icon" src="/static/icons/star-icon.svg"/>
+										<img className="star-icon" src="/static/icons/star-icon.svg"/>
+									</div>
+									<div className="field-type">{service.category_nm}</div>
+									<div className="field-title">{service.service_nm}</div>
 								</div>
-								<div className="field-type">Auto Repairs</div>
-								<div className="field-title">Restore Paint Job</div>
-							</div>
-							<div className="views-row">
-								<div className="field-image"><img src="/static/images/tools.jpg"/></div>
-								<div className="field-rating">
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-								</div>
-								<div className="field-type">Auto Maintenance</div>
-								<div className="field-title">Vehicly Winter Service</div>
-							</div>
-							<div className="views-row">
-								<div className="field-image"><img src="/static/images/grooming.jpg"/></div>
-								<div className="field-rating">
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-								</div>
-								<div className="field-type">Men's Grooming</div>
-								<div className="field-title">Haircut & Beard</div>
-							</div>
-							<div className="views-row">
-								<div className="field-image"><img src="/static/images/room.png"/></div>
-								<div className="field-rating">
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-								</div>
-								<div className="field-type">Home Repairs</div>
-								<div className="field-title">Finish your basement</div>
-							</div>
-							<div className="views-row">
-								<div className="field-image"><img src="/static/images/trainer.jpg"/></div>
-								<div className="field-rating">
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-								</div>
-								<div className="field-type">Training & Fitness</div>
-								<div className="field-title">Health Traininer - Fitness</div>
-							</div>
-							<div className="views-row">
-								<div className="field-image"><img src="/static/images/catering.jpg"/></div>
-								<div className="field-rating">
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-								</div>
-								<div className="field-type">Food Catering</div>
-								<div className="field-title">Mexican Food Catering or Meal Plans</div>
-							</div>
-							<div className="views-row">
-								<div className="field-image"><img src="/static/images/autorepair.jpg"/></div>
-								<div className="field-rating">
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-								</div>
-								<div className="field-type">Auto Repairs</div>
-								<div className="field-title">Oil Change High-End Cars</div>
-							</div>
-							<div className="views-row">
-								<div className="field-image"><img src="/static/images/trainer.jpg"/></div>
-								<div className="field-rating">
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-									<img className="star-icon" src="/static/icons/star-icon.svg"/>
-								</div>
-								<div className="field-type">Training & Fitness</div>
-								<div className="field-title">Health Traininer - Fitness</div>
-							</div>
+							)}
+	
 						</div>
 					</div>
 
