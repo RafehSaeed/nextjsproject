@@ -75,6 +75,7 @@ class Index extends React.Component {
 						<div className="view-wrapper">
 
 							{this.props.query.services.map( service =>
+							    <Link href={`/service/${service.service_id}`}>
 								<div className="views-row">
 									<div className="field-image"><img src="/static/images/autorepair.jpg"/></div>
 									<div className="field-rating">
@@ -87,6 +88,7 @@ class Index extends React.Component {
 									<div className="field-type">{service.category_nm}</div>
 									<div className="field-title">{service.service_nm}</div>
 								</div>
+							</Link>
 							)}
 	
 						</div>

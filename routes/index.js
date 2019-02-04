@@ -41,6 +41,9 @@ router.get('/about',ctrlCoin);
 router.get('/',ctrlCoin);
 router.get('/about/:id',ctrlCoin);
 
+//service
+
+router.get('/service/:service_id',ctrlCoin);
 
 
 router.get('/globaldata',ctrlCoin);

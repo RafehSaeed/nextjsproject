@@ -3,27 +3,27 @@ sequelize = db.getConnection();
 // extends base and import db connection in that 
 class ServiceCategory {
 
-    constructor(category_id , category_nm){
-        this.category_id  = category_id;
-        this.category_nm = category_nm;
-    }
+	constructor(category_id , category_nm){
+		this.category_id  = category_id;
+		this.category_nm = category_nm;
+	}
 
-    // Returns all the categories for services 
-    static getServiceCategories(){
+	// Returns all the categories for services 
+	static getServiceCategories(){
 
-        var sql = `
-            SELECT category_id , category_nm as categoryName
-            FROM service_categories 
-        `;
-        var params = {};
+		var sql = `
+			SELECT category_id , category_nm as categoryName
+			FROM service_categories 
+		`;
+		var params = {};
 
-        return sequelize.query(sql,{ replacements: params , type: sequelize.QueryTypes.SELECT }
-        ).then(categories => {
-            return categories;
-        })
-    }
+		return sequelize.query(sql,{ replacements: params , type: sequelize.QueryTypes.SELECT }
+		).then(categories => {
+			return categories;
+		})
+	}
 }
 
 module.exports = {
-    ServiceCategory: ServiceCategory
+	ServiceCategory: ServiceCategory
 };
