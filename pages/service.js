@@ -4,6 +4,14 @@ import Layout from '../components/nav/Layout'
 import Clock from '../components/Clock'
 import fetch from 'isomorphic-unfetch'
 import { inject, observer } from 'mobx-react'
+import {
+  ComposableMap,
+  ZoomableGroup,
+  Geographies,
+  Geography,
+} from "react-simple-maps"
+
+import { Form, Input, TextArea, Button, Select, Rating } from 'semantic-ui-react'
 
 @inject('store')
 @observer
@@ -11,7 +19,16 @@ class Index extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-    		categories: []
+    		categories: [],
+				optionsType: [
+					{ key: 'a', text: 'Android Device', value: 'Android Device' },
+					{ key: 'i', text: 'iPhone X', value: 'iPhone X' },
+					{ key: 'i2', text: 'iPhone 8+', value: 'iPhone 8+' },
+				],
+				additionalOptions: [
+					{ key: 'yes', text: 'Yes (+20$)', value: 'Yes (+20$)' },
+					{ key: 'no', text: 'No (+0$)', value: 'No (+0$)' },
+				]
 		};
 	}
 
@@ -21,6 +38,8 @@ class Index extends React.Component {
 
 	async componentDidMount() {
 		this.props.store.start()
+
+		// console.log(this.props.store);
 
 		this.setState({
 				categories: this.props.query.categories
@@ -38,22 +57,130 @@ class Index extends React.Component {
 	render(){
 
 		const service = this.props.query.service[0];
+		console.dir(service);
 
 		return (
 			<Layout>
 				<div className="container">
 
-					<div className="view view-categories">
+					<div className="service-type-single">
+							<div className="field-image">
+								<img className="hero-image" src="/static/images/service1image.jpeg"/>
+							</div>
 
-						<div><h2 className="view-title">{service.service_nm}</h2></div>
+							<div className="page-with-sidebar">
+
+								<main className="content-region">
+									<h2 className="field-title">{service.service_nm}</h2>
+									<div className="field-category">{service.category_nm}</div>
+									<div className="field-body-text">The apartment is large and with lots of sunlight through the big windos and 5 balconies. There are 3 rooms, a small, middle and a large. In addition, there is two loft rooms under the roof with half height, furnished with beds. The apartment is large and with lots of sunlight through the big windos and 5 balconies. There are 3 rooms, a small, middle and a large. In addition, there is two loft rooms under the roof with half height, furnished with beds.
+									<br></br>
+									<br></br>
+									The apartment is large and with lots of sunlight through the big windos and 5 balconies. There are 3 rooms, a small, middle and a large. In addition, there is two loft rooms under the roof with half height, furnished with beds. In addition, there is two loft rooms under the roof with half height, furnished with beds.
+									<br></br>
+									<br></br>
+									The apartment is large and with lots of sunlight through the big windos and 5 balconies. There are 3 rooms, a small, middle and a large. In addition, there is two loft rooms under the roof with half height, furnished with beds. 									The apartment is large and with lots of sunlight through the big windos and 5 balconies. There are 3 rooms, a small, middle and a large. In addition, there is two loft rooms under the roof with half height, furnished with beds. Loft rooms under the roof with half height, furnished with beds.</div>
+
+									<div className="field-location">
 
 
+									<ComposableMap
+							           projectionConfig={{
+							             scale: 205,
+							             rotation: [-11,0,0],
+							           }}
+							           width={980}
+							           height={551}
+							           style={{
+							             width: "100%",
+							             height: "auto",
+							           }}
+							           >
+							           <ZoomableGroup center={[0,20]} disablePanning>
+							             <Geographies geography="/static/world-50m.json">
+							               {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
+							                 <Geography
+							                   key={i}
+							                   geography={geography}
+							                   projection={projection}
+							                   style={{
+							                     default: {
+							                       fill: "#ECEFF1",
+							                       stroke: "#607D8B",
+							                       strokeWidth: 0.75,
+							                       outline: "none",
+							                     },
+							                     hover: {
+							                       fill: "#607D8B",
+							                       stroke: "#607D8B",
+							                       strokeWidth: 0.75,
+							                       outline: "none",
+							                     },
+							                     pressed: {
+							                       fill: "#FF5722",
+							                       stroke: "#607D8B",
+							                       strokeWidth: 0.75,
+							                       outline: "none",
+							                     },
+							                   }}
+							                 />
+							               ))}
+							             </Geographies>
+							           </ZoomableGroup>
+							         </ComposableMap>
+											 </div>
+
+								</main>
+
+								<aside className="sidebar">
+									<div className="field-price">{service.service_price}</div>
+									<div className="field-rating">
+										<Rating icon='star' defaultRating={3} maxRating={5} /> <div className="total-ratings">(243)</div>
+									</div>
+
+									<Form>
+										<Form.Group widths='equal'>
+											<Form.Field
+												control={Select}
+												options={this.state.optionsType}
+												label={{ children: 'Type', htmlFor: 'form-select-control-gender' }}
+												placeholder='Select an option'
+												search
+												searchInput={{ id: 'form-select-control-gender' }}
+											/>
+										</Form.Group>
+										<Form.Group widths='equal'>
+											<Form.Field
+												control={Select}
+												options={this.state.additionalOptions}
+												label={{ children: 'Purchase A Screen Protector', htmlFor: 'form-select-control-additional-options' }}
+												placeholder='Yes or No'
+												search
+												searchInput={{ id: 'form-select-control-addition-options' }}
+											/>
+										</Form.Group>
+										<div className="field info">
+											<label>Delivery Time: <span>1-3 Hours</span></label>
+										</div>
+										<div className="field info">
+											<label>Mobile Vendor: <span>No</span></label>
+										</div>
+										<div className="field info">
+											<label>Charge by the: <span>Job</span></label>
+										</div>
+										<Form.Field
+											id='form-button-control-public'
+											control={Button}
+											content='Book Now'
+											label='If you are ready click on "Book Now"'
+										/>
+									</Form>
+								</aside>
+
+							</div>
 					</div>
-
-
 				</div>
 
-				{/* ///MOBX Component using observables */}
 				{/* <Clock
 					lastUpdate={this.props.store.lastUpdate}
 					light={this.props.store.light}

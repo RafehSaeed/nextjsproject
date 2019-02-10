@@ -1,0 +1,124 @@
+.hero-image {
+  width: 100%;
+  // max-height: 400px;
+  overflow: hidden;
+
+}
+
+.service-type-single {
+
+  .page-with-sidebar {
+    margin: 40px auto;
+    max-width: 1200px;
+
+    .field {
+      margin-top: 30px;
+
+      &.info {
+
+        label {
+          font-weight: 300;
+          // display: none;
+          span {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .field-location {
+      padding: 40px;
+      padding-left: 0;
+      padding-right: 150px;
+    }
+
+    .field-title {
+
+      font-size: 29px;
+      font-weight: 600;
+
+    }
+
+    .field-category {
+      display: inline-block;
+      border-radius: 100px;
+      border: 2px solid $secondary-color;
+      color: $secondary-color;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+    }
+
+    .field-body-text {
+      margin-top: 40px;
+      padding-right: 60px;
+      line-height: 1.73;
+    }
+
+    .field-price {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      &:before {
+        content: '$ ';
+      }
+    }
+
+    .field-rating {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      img {
+        display: inline-block;
+        width: 100%;
+        max-width: 30px;
+      }
+
+      .total-ratings {
+        // padding-top: 4px;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+
+  }
+
+  .content-region {
+    float: left;
+    display: inline-block;
+    width: 70%;
+  }
+
+  .sidebar {
+    float: left;
+    display: inline-block;
+    // margin-top: 28px;
+    margin-bottom: 40px;
+    width: 30%;
+    min-height: 750px;
+    box-sizing: border-box;
+    padding: 30px;
+    padding-top: 50px;
+    background-color: white;
+    -webkit-box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
+    -moz-box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
+    box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
+
+    .ui.button {
+      margin-top: 15px;
+      background-color: $secondary-color;
+      color: white;
+      width: 100%;
+      border: 3px solid transparent;
+      &:hover {
+        background-color: transparent;
+        border: 3px solid $secondary-color;
+        color: $secondary-color;
+      }
+    }
+  }
+}
