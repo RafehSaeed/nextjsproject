@@ -8,6 +8,7 @@
 .service-type-single {
 
   .page-with-sidebar {
+
     margin: 40px auto;
     max-width: 1200px;
 
@@ -29,12 +30,15 @@
     .field-location {
       padding: 40px;
       padding-left: 0;
-      padding-right: 150px;
+      padding-right:60px;
+      width: 100%;
+      height: 450px;
     }
 
     .field-accordion {
       margin-top: 40px;
-      
+      margin-bottom: 40px;
+
       .ui.styled.accordion {
         width: 93%;
       }
@@ -42,7 +46,7 @@
 
     .field-title {
 
-      font-size: 29px;
+      font-size: 34px;
       font-weight: 600;
 
     }
@@ -50,12 +54,14 @@
     .field-category {
       display: inline-block;
       border-radius: 100px;
+      border-radius: 5px;
       border: 2px solid $secondary-color;
       color: $secondary-color;
       padding-left: 15px;
       padding-right: 15px;
       padding-top: 10px;
       padding-bottom: 10px;
+      font-size: 14px;
 
     }
 

@@ -25,7 +25,15 @@ class Index extends React.Component {
 				additionalOptions: [ //options for drop down select
 					{ key: 'yes', text: 'Yes (+20$)', value: 'Yes (+20$)' },
 					{ key: 'no', text: 'No (+0$)', value: 'No (+0$)' },
-				]
+				],
+				location: {
+					center: {
+						lat: 45.506718,
+						lng: -73.579611
+					},
+					zoom: 15,
+				}
+
 		};
 	}
 
@@ -56,9 +64,6 @@ class Index extends React.Component {
 		const service = this.props.query.service[0];
 
 		//example use of dynamic props for compoennt
-		var props = {};
-		props.lat = '44';
-		props.long = '76';
 
 		return (
 			<Layout>
@@ -82,13 +87,18 @@ class Index extends React.Component {
 									<br></br>
 									The apartment is large and with lots of sunlight through the big windos and 5 balconies. There are 3 rooms, a small, middle and a large. In addition, there is two loft rooms under the roof with half height, furnished with beds. 									The apartment is large and with lots of sunlight through the big windos and 5 balconies. There are 3 rooms, a small, middle and a large. In addition, there is two loft rooms under the roof with half height, furnished with beds. Loft rooms under the roof with half height, furnished with beds.</div>
 
+
+									<div className="field-location">
+										<h2>Address</h2>
+										<MapBlock {...this.state.location}/>
+									</div>
+
 									<div className="field-accordion">
+										<h2>Important Information & Policiess</h2>
 										<AccordionBlock/>
 									</div>
 
-									<div className="field-location">
-										<MapBlock {...props}/>
-									</div>
+
 
 								</main>
 
