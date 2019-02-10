@@ -2,14 +2,10 @@ import Link from 'next/link'
 import Header from '../components/nav/Header'
 import Layout from '../components/nav/Layout'
 import Clock from '../components/Clock'
+import AccordionBlock from '../components/blocks/AccordionBlock'
+import MapBlock from '../components/blocks/MapBlock'
 import fetch from 'isomorphic-unfetch'
 import { inject, observer } from 'mobx-react'
-import {
-  ComposableMap,
-  ZoomableGroup,
-  Geographies,
-  Geography,
-} from "react-simple-maps"
 
 import { Form, Input, TextArea, Button, Select, Rating } from 'semantic-ui-react'
 
@@ -18,14 +14,15 @@ import { Form, Input, TextArea, Button, Select, Rating } from 'semantic-ui-react
 class Index extends React.Component {
 	constructor(props) {
 		super(props);
+
 		this.state = {
     		categories: [],
-				optionsType: [
+				optionsType: [ //options for drop down select
 					{ key: 'a', text: 'Android Device', value: 'Android Device' },
 					{ key: 'i', text: 'iPhone X', value: 'iPhone X' },
 					{ key: 'i2', text: 'iPhone 8+', value: 'iPhone 8+' },
 				],
-				additionalOptions: [
+				additionalOptions: [ //options for drop down select
 					{ key: 'yes', text: 'Yes (+20$)', value: 'Yes (+20$)' },
 					{ key: 'no', text: 'No (+0$)', value: 'No (+0$)' },
 				]
@@ -44,7 +41,7 @@ class Index extends React.Component {
 		this.setState({
 				categories: this.props.query.categories
 		}, function(){
-			console.log(this);
+			// console.log(this);
 		});
 
 
@@ -57,7 +54,6 @@ class Index extends React.Component {
 	render(){
 
 		const service = this.props.query.service[0];
-		console.dir(service);
 
 		return (
 			<Layout>
@@ -81,54 +77,13 @@ class Index extends React.Component {
 									<br></br>
 									The apartment is large and with lots of sunlight through the big windos and 5 balconies. There are 3 rooms, a small, middle and a large. In addition, there is two loft rooms under the roof with half height, furnished with beds. 									The apartment is large and with lots of sunlight through the big windos and 5 balconies. There are 3 rooms, a small, middle and a large. In addition, there is two loft rooms under the roof with half height, furnished with beds. Loft rooms under the roof with half height, furnished with beds.</div>
 
+									<div className="field-accordion">
+										<AccordionBlock/>
+									</div>
+
 									<div className="field-location">
-
-
-									<ComposableMap
-							           projectionConfig={{
-							             scale: 205,
-							             rotation: [-11,0,0],
-							           }}
-							           width={980}
-							           height={551}
-							           style={{
-							             width: "100%",
-							             height: "auto",
-							           }}
-							           >
-							           <ZoomableGroup center={[0,20]} disablePanning>
-							             <Geographies geography="/static/world-50m.json">
-							               {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
-							                 <Geography
-							                   key={i}
-							                   geography={geography}
-							                   projection={projection}
-							                   style={{
-							                     default: {
-							                       fill: "#ECEFF1",
-							                       stroke: "#607D8B",
-							                       strokeWidth: 0.75,
-							                       outline: "none",
-							                     },
-							                     hover: {
-							                       fill: "#607D8B",
-							                       stroke: "#607D8B",
-							                       strokeWidth: 0.75,
-							                       outline: "none",
-							                     },
-							                     pressed: {
-							                       fill: "#FF5722",
-							                       stroke: "#607D8B",
-							                       strokeWidth: 0.75,
-							                       outline: "none",
-							                     },
-							                   }}
-							                 />
-							               ))}
-							             </Geographies>
-							           </ZoomableGroup>
-							         </ComposableMap>
-											 </div>
+										<MapBlock lat="40" long="74"/>
+									</div>
 
 								</main>
 

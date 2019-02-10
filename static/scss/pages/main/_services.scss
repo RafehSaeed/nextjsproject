@@ -32,6 +32,14 @@
       padding-right: 150px;
     }
 
+    .field-accordion {
+      margin-top: 40px;
+      
+      .ui.styled.accordion {
+        width: 93%;
+      }
+    }
+
     .field-title {
 
       font-size: 29px;
