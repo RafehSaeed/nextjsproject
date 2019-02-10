@@ -55,6 +55,11 @@ class Index extends React.Component {
 
 		const service = this.props.query.service[0];
 
+		//example use of dynamic props for compoennt
+		var props = {};
+		props.lat = '44';
+		props.long = '76';
+
 		return (
 			<Layout>
 				<div className="container">
@@ -82,7 +87,7 @@ class Index extends React.Component {
 									</div>
 
 									<div className="field-location">
-										<MapBlock lat="40" long="74"/>
+										<MapBlock {...props}/>
 									</div>
 
 								</main>
