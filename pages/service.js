@@ -8,6 +8,9 @@ import fetch from 'isomorphic-unfetch'
 import { inject, observer } from 'mobx-react'
 
 import { Form, Input, TextArea, Button, Select, Rating } from 'semantic-ui-react'
+import {
+    DateInput, TimeInput, DatesRangeInput } from 'semantic-ui-calendar-react';
+
 
 @inject('store')
 @observer
@@ -23,8 +26,8 @@ class Index extends React.Component {
 					{ key: 'i2', text: 'iPhone 8+', value: 'iPhone 8+' },
 				],
 				additionalOptions: [ //options for drop down select
-					{ key: 'yes', text: 'Yes (+20$)', value: 'Yes (+20$)' },
-					{ key: 'no', text: 'No (+0$)', value: 'No (+0$)' },
+					{ key: 'yes', text: 'Yes (+ $20)', value: 'Yes (+20$)' },
+					{ key: 'no', text: 'No (+ $0)', value: 'No (+ $0)' },
 				],
 				location: {
 					center: {
@@ -32,7 +35,9 @@ class Index extends React.Component {
 						lng: -73.579611
 					},
 					zoom: 15,
-				}
+				},
+				time: '',
+				date: ''
 
 		};
 	}
@@ -53,6 +58,12 @@ class Index extends React.Component {
 		});
 
 
+	}
+
+	handleChange = (event, {name, value}) => {
+		if (this.state.hasOwnProperty(name)) {
+			this.setState({ [name]: value });
+		}
 	}
 
   componentWillUnmount() {
@@ -94,7 +105,7 @@ class Index extends React.Component {
 									</div>
 
 									<div className="field-accordion">
-										<h2>Important Information & Policiess</h2>
+										<h2>Important Information & Policies</h2>
 										<AccordionBlock/>
 									</div>
 
@@ -108,6 +119,31 @@ class Index extends React.Component {
 										<Rating icon='star' defaultRating={3} maxRating={5} /> <div className="total-ratings">(243)</div>
 									</div>
 
+									<Form>
+										<div className="field-input">
+											<label>Date</label>
+											<DateInput
+												name="date"
+												placeholder="Date"
+												value={this.state.date}
+												iconPosition="left"
+												onChange={this.handleChange}
+											/>
+									  </div>
+										<div className="field-input">
+											<label>Time</label>
+											<TimeInput
+												closable
+												name="time"
+												timeFormat="AMPM"
+												placeholder="Time"
+												value={this.state.time}
+												iconPosition="left"
+												onChange={this.handleChange}
+											/>
+										</div>
+
+									</Form>
 									<Form>
 										<Form.Group widths='equal'>
 											<Form.Field

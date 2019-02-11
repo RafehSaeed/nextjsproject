@@ -27,6 +27,19 @@
       }
     }
 
+    .field-input {
+      margin-bottom: 15px;
+
+      .field {
+        margin-top: .28571429rem;
+      }
+
+      label {
+        font-weight: 700;
+        font-size: 13px;
+      }
+    }
+
     .field-location {
       padding: 40px;
       padding-left: 0;
@@ -123,7 +136,6 @@
     box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
 
     .ui.button {
-      margin-top: 15px;
       background-color: $secondary-color;
       color: white;
       width: 100%;
