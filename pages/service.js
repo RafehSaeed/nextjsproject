@@ -108,9 +108,6 @@ class Index extends React.Component {
 										<h2>Important Information & Policies</h2>
 										<AccordionBlock/>
 									</div>
-
-
-
 								</main>
 
 								<aside className="sidebar">
@@ -157,7 +154,6 @@ class Index extends React.Component {
 												placeholder='Select an option'
 												search
 												searchInput={{ id: 'form-select-control-gender' }}
-												readOnly={true}
 											/>
 										</Form.Group>
 										<Form.Group widths='equal'>
@@ -168,7 +164,6 @@ class Index extends React.Component {
 												placeholder='Yes or No'
 												search
 												searchInput={{ id: 'form-select-control-addition-options' }}
-												readOnly={true}
 											/>
 										</Form.Group>
 										<div className="field info">
