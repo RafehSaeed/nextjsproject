@@ -128,6 +128,8 @@ class Index extends React.Component {
 												value={this.state.date}
 												iconPosition="left"
 												onChange={this.handleChange}
+												closable
+												readOnly
 											/>
 									  </div>
 										<div className="field-input">
@@ -140,6 +142,8 @@ class Index extends React.Component {
 												value={this.state.time}
 												iconPosition="left"
 												onChange={this.handleChange}
+												closable
+												readOnly
 											/>
 										</div>
 
@@ -153,6 +157,7 @@ class Index extends React.Component {
 												placeholder='Select an option'
 												search
 												searchInput={{ id: 'form-select-control-gender' }}
+												readOnly={true}
 											/>
 										</Form.Group>
 										<Form.Group widths='equal'>
@@ -163,6 +168,7 @@ class Index extends React.Component {
 												placeholder='Yes or No'
 												search
 												searchInput={{ id: 'form-select-control-addition-options' }}
+												readOnly={true}
 											/>
 										</Form.Group>
 										<div className="field info">
