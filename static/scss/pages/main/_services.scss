@@ -43,9 +43,12 @@
     .field-location {
       padding: 40px;
       padding-left: 0;
-      padding-right:60px;
+      padding-right:0px;
       width: 100%;
       height: 450px;
+      @media screen and (min-width: 768px) {
+        padding-right: 60px;
+      }
     }
 
     .field-accordion {
@@ -53,7 +56,10 @@
       margin-bottom: 40px;
 
       .ui.styled.accordion {
-        width: 93%;
+        width: 100%;
+        @media screen and (min-width: 768px) {
+          width: 93%;
+        }
       }
     }
 
@@ -80,8 +86,12 @@
 
     .field-body-text {
       margin-top: 40px;
-      padding-right: 60px;
+      padding-right: inherit;
       line-height: 1.73;
+
+      @media screen and (min-width: 768px) {
+        padding-right: 60px;
+      }
     }
 
     .field-price {
@@ -117,16 +127,23 @@
   .content-region {
     float: left;
     display: inline-block;
-    width: 70%;
+    width: 100%;
+    padding: 30px;
+
+    @media screen and (min-width: 768px) {
+        width: 70%;
+        padding: inherit;
+    }
   }
 
   .sidebar {
+
     float: left;
     display: inline-block;
     // margin-top: 28px;
     margin-bottom: 40px;
-    width: 30%;
-    min-height: 750px;
+    width: 100%;
+    // min-height: 750px;
     box-sizing: border-box;
     padding: 30px;
     padding-top: 50px;
@@ -134,6 +151,10 @@
     -webkit-box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
     -moz-box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
     box-shadow: 0px 1px 100px -26px rgba(133,133,133,0.45);
+
+    @media screen and (min-width: 768px) {
+        width: 30%;
+    }
 
     .ui.button {
       background-color: $secondary-color;
