@@ -21,11 +21,12 @@ class Index extends React.Component {
 
 	async componentDidMount() {
 		this.props.store.start()
+		// console.log(this.props.query.services);
 
 		this.setState({
 				categories: this.props.query.categories
 		}, function(){
-			console.log(this);
+			// console.log(this);
 		});
 
 
@@ -57,8 +58,7 @@ class Index extends React.Component {
 						<div className="view-wrapper">
 
 							{this.props.query.categories.map( category =>
-								<div className="views-row">
-									{/* <div className="example red">{category.category_id}</div> */}
+								<div key={category.category_id} className="views-row">
 									<div className="field-title">{category.categoryname}</div>
 								</div>
 							)}
@@ -75,7 +75,7 @@ class Index extends React.Component {
 						<div className="view-wrapper">
 
 							{this.props.query.services.map( service =>
-							<Link href={`/service/${service.service_id}`}>
+							<Link key={service.service_id} href={`/service/${service.service_id}`}>
 								<div className="views-row">
 									<div className="field-image"><img src="/static/images/autorepair.jpg"/></div>
 									<div className="field-rating">

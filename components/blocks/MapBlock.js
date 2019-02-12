@@ -3,23 +3,17 @@ import GoogleMapReact from 'google-map-react';
 import { Icon } from 'semantic-ui-react'
 
 const Marker = () => {
-
   return (
     <Icon.Group size='huge'>
       <Icon rotated='clockwise' size='small' inverted name='map marker alternate' color='blue'/>
     </Icon.Group>
   )
-
 }
 
 export default class MapBlock extends Component {
 
   render() {
-
-    console.log(this.props);
-
     return (
-
       <GoogleMapReact
         bootstrapURLKeys={
           { key: 'AIzaSyATx_dhLvGCK6TqL0s8oBQ7ri0lIi9GPSY' }
@@ -32,13 +26,6 @@ export default class MapBlock extends Component {
         lng={this.props.center.lng}
       />
       </GoogleMapReact>
-
     )
   }
 }
-
-// <AnyReactComponent
-//   lat={59.955413}
-//   lng={30.337844}
-//   text={'Kreyser Avrora'}
-// />
