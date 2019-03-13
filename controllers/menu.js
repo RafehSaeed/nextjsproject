@@ -4,11 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Item = require('../models/menu.js').Item;
-var Graph = require('../models/graph.js').Graph;
-var Market = require('../models/market.js').Market;
 var Language = require('../models/languages.js').Language;
-var Article= require('../models/article.js').Article;
 var R = require('ramda');
 
 //Returns all the Menu Itemw as JSON

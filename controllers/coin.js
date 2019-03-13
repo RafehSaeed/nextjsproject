@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var router = express.Router();
-var Coin = require('../models/coin.js').CoinList;
 var helper = require('../helpers/helper.js');
 var next = require('next');
 var dev = process.env.NODE_DEV !== 'production' //true false
@@ -83,4 +82,4 @@ router.get('/service/:service_id', (req, res) => {
   });
 
 
-module.exports= router;''
+module.exports= router;

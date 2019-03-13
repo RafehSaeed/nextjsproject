@@ -7,7 +7,8 @@ export default class AboutPage extends React.Component {
     // console.log('-----------');
     // const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
     return { query }
-  }
+
+  
 
   render() {
 

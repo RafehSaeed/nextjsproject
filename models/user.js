@@ -8,6 +8,8 @@ class User {
     // Registers the user
     static registerUser(call_params){
 
+        console.log(call_params); exit;
+
         var sql = `
             INSERT INTO users(
                 nm_prefix

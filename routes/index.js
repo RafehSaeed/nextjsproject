@@ -14,8 +14,9 @@ var ctrlCoin = require('../controllers/coin');
 
 
 // authentication - add auth keyword after route to protect end point with only token access
-router.post('/register', ctrlAuth.register);
-router.post('/login', ctrlAuth.login);
+// router.post('/register', ctrlAuth.register);
+router.get('/register', ctrlAuth)
+.post('/login', ctrlAuth);
 
 //Items
 router.get('/items',ctrlMenu);
