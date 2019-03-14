@@ -3,15 +3,19 @@ import { Form, Input, TextArea, Button, Select, Rating } from 'semantic-ui-react
 
 export default class RegisterPage extends React.Component {
 
-  static async getInitialProps({query}) {
+
+  
+
+  static async getInitialProps({query}){
   	return { query }
   }
 
 
-  componentDidMount(){
+	componentDidMount(){
 
-  		// Applies validation to the registration form
-  		function applyFormValidation() {
+		let formData = {}
+		// Applies validation to the registration form
+		function applyFormValidation() {
 			$('.ui.form')
 			  .form({
 			    fields: {
@@ -22,9 +26,22 @@ export default class RegisterPage extends React.Component {
 			      user_type : 'empty'
 			    }
 			  });
-  		}	
-  		applyFormValidation();
-  }
+
+			$( "#register_btn" ).click(n => {
+			    event.preventDefault();
+			    formData = $('.ui.form').form('get values')
+			    console.log(formData)
+			    
+			});
+		}	
+		applyFormValidation();
+	}
+
+
+	onFieldChange(event){
+		$('.ui.form')
+		.form('set value', [event.target.name], event.target.value)
+	}
 
   render() {
     const userTypes =  [ //options for drop down select
@@ -39,12 +56,12 @@ export default class RegisterPage extends React.Component {
 					<div className="view-wrapper form-fields">
 						<Form>
 							<h2 className="registration-title">Register <span>now</span></h2>
-							<Form.Field label='First Name' id="first_name" name="first_name" placeholder="First Name" control='input' type='text' />
-							<Form.Field label='Last Name' id="last_name" name="last_name" placeholder="Last Name" control='input' type='text' />
-							<Form.Field label='Email Address' id="email_addr" name="email_addr" placeholder="Email " control='input' type='text' />
-							<Form.Field label='Password' id="password" name="password"  control='input' type='password' />
-							<Form.Field label='User Type' id="user_type" name="user_type" control={Select} options={userTypes}/>
-							<Form.Field content="Register" id="register" control={Button} />
+							<Form.Field onChange={this.onFieldChange} label='First Name' id="first_name" name="first_name" placeholder="First Name"  control='input' type='text' />
+							<Form.Field onChange={this.onFieldChange}  label='Last Name' id="last_name" name="last_name" placeholder="Last Name"   control='input' type='text' />
+							<Form.Field onChange={this.onFieldChange}  label='Email Address' id="email_addr" name="email_addr" placeholder="Email "   control='input' type='text' />
+							<Form.Field onChange={this.onFieldChange}  label='Password' id="password" name="password"  control='input'  type='password' />
+							{/*<Form.Field label='User Type' id="user_type" name="user_type" control={Select}  value="" options={userTypes}/>*/}
+							<Form.Field content="Register" id="register_btn"  control={Button} />
 						</Form>
 					</div>
 				</div>
