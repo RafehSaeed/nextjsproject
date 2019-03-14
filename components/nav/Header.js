@@ -20,10 +20,10 @@ const Header = () => (
 		<header>
     	<Link href="/"><a><span className="logo-branding">Jolt</span></a></Link>
     	<div className="main-menu">
-	      <Link href="/">
+	      <Link href="/register">
 	        <a style={linkStyle.default}>Sign-up</a>
 	      </Link>
-	      <Link href="/sign-up">
+	      <Link href="/login">
 	        <a style={linkStyle.default}>Login</a>
 	      </Link>
 	      <Link href="/map">

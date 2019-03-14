@@ -12,22 +12,23 @@ export default class AboutLanding extends React.Component {
   }
 
   render() {
-
+    
     return (
         <Layout>
-            <div className='wrapper'>
-                <style jsx>{`
-                `}</style>
+          <div className='wrapper'>
+              <style jsx>{`
+              
+              `}</style>
 
-            <div className="container">
-                <div className='wrapper-contained'>
-                    <div className='weather-container'>
-                        <h3>Try entering a city /about/[City Name]</h3>
+                <div className="container">
+                    <div className='wrapper-contained'>
+                        <div className='weather-container'>
+                            <h3>Try entering a city /about/[City Name]</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-      </div>
-    </Layout>
+          </div>
+        </Layout>
     )
   }
 }

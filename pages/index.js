@@ -38,7 +38,7 @@ class Index extends React.Component {
 
 	render(){
 		return (
-			<Layout>
+			<Layout background="/static/backgrounds/night.jpg">
 				<div className="container">
 					{/* <span className="white-square"></span> */}
 

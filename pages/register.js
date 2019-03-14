@@ -1,9 +1,19 @@
 import Layout from '../components/nav/Layout'
 import { Form, Input, TextArea, Button, Select, Rating } from 'semantic-ui-react'
+import validator from 'validator';
 
 export default class RegisterPage extends React.Component {
 
-
+  constructor(props) {
+    super(props);
+		this.state = {
+			first_name: '',
+			last_name: '',
+			email_addr: '',
+			password: '',
+			user_type: '',
+		};
+  }
   
 
   static async getInitialProps({query}){
@@ -13,9 +23,12 @@ export default class RegisterPage extends React.Component {
 
 	componentDidMount(){
 
-		let formData = {}
+
+
+		let formData = {};
 		// Applies validation to the registration form
-		function applyFormValidation() {
+		// Arrow function for maintaining context for "this"
+		var applyFormValidation = () => {
 			$('.ui.form')
 			  .form({
 			    fields: {
@@ -29,14 +42,15 @@ export default class RegisterPage extends React.Component {
 
 			$( "#register_btn" ).click(n => {
 			    event.preventDefault();
-			    formData = $('.ui.form').form('get values')
-			    console.log(formData)
-			    
+			    formData = $('.ui.form').form('get values');
+					this.setState(formData, console.log(this.state)); 
+					alert("Thanks for submitting!");
 			});
-		}	
+		}
+
 		applyFormValidation();
 	}
-
+ 
 
 	onFieldChange(event){
 		$('.ui.form')
@@ -49,24 +63,27 @@ export default class RegisterPage extends React.Component {
 					{ key: 'reg', text: 'Regular User', value: 'reg' },
 					{ key: 'sp', text: 'Service Provider', value: 'sp' },
 				]
-	return (
-		<Layout>
-			<div className="container">
-				<div className="view view-categories">
-					<div className="view-wrapper form-fields">
-						<Form>
-							<h2 className="registration-title">Register <span>now</span></h2>
-							<Form.Field onChange={this.onFieldChange} label='First Name' id="first_name" name="first_name" placeholder="First Name"  control='input' type='text' />
-							<Form.Field onChange={this.onFieldChange}  label='Last Name' id="last_name" name="last_name" placeholder="Last Name"   control='input' type='text' />
-							<Form.Field onChange={this.onFieldChange}  label='Email Address' id="email_addr" name="email_addr" placeholder="Email "   control='input' type='text' />
-							<Form.Field onChange={this.onFieldChange}  label='Password' id="password" name="password"  control='input'  type='password' />
-							{/*<Form.Field label='User Type' id="user_type" name="user_type" control={Select}  value="" options={userTypes}/>*/}
-							<Form.Field content="Register" id="register_btn"  control={Button} />
-						</Form>
+		return (
+			<Layout background="/static/backgrounds/grunge.jpg">
+				<div className="container">
+					<div className="user-on-boarding">
+						<div className="view registration-form">
+							<h2 className="title">Register <span>Now</span></h2>
+							<Form>
+									<Form.Field onChange={this.onFieldChange} label='First Name' id="first_name" name="first_name" placeholder="First Name"  control='input' type='text'>
+									</Form.Field>
+									<Form.Field onChange={this.onFieldChange}  label='Last Name' id="last_name" name="last_name" placeholder="Last Name"   control='input' type='text' />
+									<Form.Field onChange={this.onFieldChange}  label='Email Address' id="email_addr" name="email_addr" placeholder="Email "   control='input' type='text' />
+									<Form.Field onChange={this.onFieldChange}  label='Password' id="password" name="password"  control='input'  type='password' />
+									<Form.Field label='User Type' id="user_type" name="user_type" control={Select}  value={this.state.usr_type} options={userTypes}/>
+								<Form.Field  />
+								<Form.Checkbox label='I agree to the Terms and Conditions' />
+								<Button positive content="Register" id="register_btn"  control={Button}>Positive Button</Button>
+							</Form>
+						</div>
 					</div>
 				</div>
-			</div>
-		</Layout>
-	)
+			</Layout>
+		)
   }
 }
