@@ -41,6 +41,39 @@
 
   }
 
+
+
+  .registration-title {
+
+
+    @media screen and (min-width: 768px) {
+      margin: 20px 0px;
+    }
+
+    span {
+      color: #2CACFB;
+    }
+  }
+
+
+  .form-fields {
+    text-align: center;
+    margin: 20px 0px;
+
+    line-height: 1.6;
+    color: #888888;
+    font-weight: 400;
+    font-size: 36px;
+
+    @media screen and (min-width: 768px) {
+      text-align: left;
+      margin: 20px 30px;
+    }
+
+
+  }
+
+
   .view-wrapper {
     display: -webkit-flex; /* Safari */
     -webkit-flex-wrap: wrap; /* Safari 6.1+ */
