@@ -41,10 +41,13 @@ export default class RegisterPage extends React.Component {
 			  });
 
 			$( "#register_btn" ).click(n => {
-			    event.preventDefault();
 			    formData = $('.ui.form').form('get values');
-					this.setState(formData, console.log(this.state)); 
-					alert("Thanks for submitting!");
+					this.setState(formData); 
+					if( $('.ui.form').form('is valid')) {
+						console.log(this.state)
+						alert("Thanks for submitting!");
+					}
+			
 			});
 		}
 
@@ -70,15 +73,13 @@ export default class RegisterPage extends React.Component {
 						<div className="view registration-form">
 							<h2 className="title">Register <span>Now</span></h2>
 							<Form>
-									<Form.Field onChange={this.onFieldChange} label='First Name' id="first_name" name="first_name" placeholder="First Name"  control='input' type='text'>
-									</Form.Field>
+									<Form.Field onChange={this.onFieldChange} label='First Name' id="first_name" name="first_name" placeholder="First Name"  control='input' type='text'/>
 									<Form.Field onChange={this.onFieldChange}  label='Last Name' id="last_name" name="last_name" placeholder="Last Name"   control='input' type='text' />
 									<Form.Field onChange={this.onFieldChange}  label='Email Address' id="email_addr" name="email_addr" placeholder="Email "   control='input' type='text' />
 									<Form.Field onChange={this.onFieldChange}  label='Password' id="password" name="password"  control='input'  type='password' />
 									<Form.Field label='User Type' id="user_type" name="user_type" control={Select}  value={this.state.usr_type} options={userTypes}/>
-								<Form.Field  />
-								<Form.Checkbox label='I agree to the Terms and Conditions' />
-								<Button positive content="Register" id="register_btn"  control={Button}>Positive Button</Button>
+									<Form.Checkbox label='I agree to the Terms and Conditions' />
+									<Form.Field positive content="Register" id="register_btn"  control={Button}/>
 							</Form>
 						</div>
 					</div>

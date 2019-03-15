@@ -18,14 +18,14 @@ const Header = () => (
 
 	<div className="header-container">
 		<header>
-    	<Link href="/"><a><span className="logo-branding">Jolt</span></a></Link>
+  {/*  	<Link href="/">*/}<a href='/'><span className="logo-branding">Jolt</span></a>{/*</Link>*/}
     	<div className="main-menu">
-	      <Link href="/register">
-	        <a style={linkStyle.default}>Sign-up</a>
-	      </Link>
-	      <Link href="/login">
-	        <a style={linkStyle.default}>Login</a>
-	      </Link>
+	      {/*<Link href="/register">*/}
+	        <a href="/register" style={linkStyle.default}>Sign-up</a>
+	      {/*</Link>*/}
+	      {/*<Link href="/login">*/}
+	        <a href="/login" style={linkStyle.default}>Login</a>
+	      {/*</Link>*/}
 	      <Link href="/map">
 	        <a style={linkStyle.bold}>Become A Service Provider</a>
 	      </Link>
