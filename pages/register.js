@@ -23,22 +23,54 @@ export default class RegisterPage extends React.Component {
 
 	componentDidMount(){
 
-
-
 		let formData = {};
-		// Applies validation to the registration form
-		// Arrow function for maintaining context for "this"
+
+		// Apply validation to the form here
 		var applyFormValidation = () => {
-			$('.ui.form')
-			  .form({
-			    fields: {
-			      first_name     : 'empty',
-			      last_name   : 'empty',
-			      email_addr : 'empty',
-			      password : ['minLength[6]', 'empty'],
-			      user_type : 'empty'
-			    }
-			  });
+			$('.ui.form').form({
+					fields: {
+					  first_name: {
+						identifier: 'first_name',
+						rules: [
+						          {
+						            type   : 'empty',
+						            prompt : 'Please enter your first name'
+						          }
+						        ]
+							},
+					  last_name: {
+						identifier: 'last_name',
+						rules: [
+						          {
+						            type   : 'empty',
+						            prompt : 'Please enter your last name'
+						          }
+						        ]
+							},
+						password:  {
+					        identifier: 'password',
+					        rules: [
+					          {
+					            type   : 'empty',
+					            prompt : 'Please enter a password'
+					          },
+					          {
+					            type   : 'minLength[6]',
+					            prompt : 'Your password must be at least {ruleValue} characters'
+					          }
+					        ]
+					      },
+						email_addr:  {
+					        identifier: 'email_addr',
+					        rules: [
+					          {
+					            type   : 'email',
+					            prompt : 'Please enter a valid emaill address'
+					          }
+					        ]
+					      }
+					}
+				});
 
 			$( "#register_btn" ).click(n => {
 			    formData = $('.ui.form').form('get values');
@@ -79,12 +111,14 @@ export default class RegisterPage extends React.Component {
 									<Form.Field onChange={this.onFieldChange}  label='Password' id="password" name="password"  control='input'  type='password' />
 									<Form.Field label='User Type' id="user_type" name="user_type" control={Select}  value={this.state.usr_type} options={userTypes}/>
 									<Form.Checkbox label='I agree to the Terms and Conditions' />
+									<div class="ui error message"/>
 									<Form.Field positive content="Register" id="register_btn"  control={Button}/>
+
 							</Form>
 						</div>
 					</div>
 				</div>
 			</Layout>
 		)
-  }
+	}
 }

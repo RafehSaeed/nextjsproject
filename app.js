@@ -39,12 +39,15 @@ client.on('error', function(err){
 //   console.log('Database connection activated...');
 // });
 
-require('./config/passport');
 
-var routesApi = require('./routes/index');
-// var app = express();
 
 nextApp.prepare().then(() => {
+
+	require('./config/passport');
+
+	var routesApi = require('./routes/index');
+// var app = express();
+
     const app = express()
 
 	app.use(function(req, res, next) {

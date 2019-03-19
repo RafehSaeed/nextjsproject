@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import Header from '../components/nav/Header'
 import Layout from '../components/nav/Layout'
-import Clock from '../components/Clock'
-import fetch from 'isomorphic-unfetch'
 import { inject, observer } from 'mobx-react'
 
 @inject('store')

@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import Header from '../components/nav/Header'
 import Layout from '../components/nav/Layout'
-import Clock from '../components/Clock'
+// import Clock from '../components/Clock'
 import AccordionBlock from '../components/blocks/AccordionBlock'
 import MapBlock from '../components/blocks/MapBlock'
-import fetch from 'isomorphic-unfetch'
+// import fetch from 'isomorphic-unfetch'
 import { inject, observer } from 'mobx-react'
-
 import { Form, Input, TextArea, Button, Select, Rating } from 'semantic-ui-react'
 import {
     DateInput, TimeInput, DatesRangeInput } from 'semantic-ui-calendar-react';
+
 
 
 @inject('store')
@@ -48,6 +48,7 @@ class Index extends React.Component {
 
 	async componentDidMount() {
 		this.props.store.start()
+
 
 		// console.log(this.props.store);
 
