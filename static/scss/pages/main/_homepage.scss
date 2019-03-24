@@ -13,7 +13,7 @@
 .left-side {
   float: left;
   width: 50%;
-  display: inline-block
+  display: inline-block;
 }
 .intro-text {
   margin-left: 30%;
@@ -90,4 +90,21 @@
     color: #777;
     padding: 0;
   }
+}
+
+
+.white-square {
+  opacity: 0.7;
+  position: absolute;
+  width: 500px;
+  width: 2400px;
+  // width: 500px;
+  height: 1700px;
+  background-color: white;
+  // background-color: black;
+  top: 0;
+  left: 5%;
+  z-index: 0;
+  transform: rotate(135deg);
+  // border: 5px solid black;
 }

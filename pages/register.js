@@ -99,7 +99,7 @@ export default class RegisterPage extends React.Component {
 					{ key: 'sp', text: 'Service Provider', value: 'sp' },
 				]
 		return (
-			<Layout background="/static/backgrounds/grunge.jpg">
+			<Layout background="/static/backgrounds/person.jpg">
 				<div className="container">
 					<div className="user-on-boarding">
 						<div className="view registration-form">

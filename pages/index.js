@@ -36,15 +36,9 @@ class Index extends React.Component {
 
 	render(){
 		return (
-			<Layout background="/static/backgrounds/night.jpg">
+			<Layout background="/static/backgrounds/tech.jpg">
 				<div className="container">
-					{/* <span className="white-square"></span> */}
-
-					{/* <div className="hero-wrapper">
-						<div className="left-side">
-							<div className="intro-text">Check us out again shortly.</div>
-						</div>
-					</div> */}
+					<span className="white-square"></span>
 {/*
 					<div className="body-text">{this.props.store.getName} we are currently under construction. :(</div> */}
 
@@ -66,7 +60,7 @@ class Index extends React.Component {
 					</div>
 
 
-					<div className="view view-categories view-popular">
+					<div className="view view-popular">
 
 						<div className="view-wrapper"><h2 className="view-title">Popular Services</h2></div>
 
