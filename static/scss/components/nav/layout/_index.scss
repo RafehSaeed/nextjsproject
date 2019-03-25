@@ -21,3 +21,29 @@ div.wrapper {
   padding-bottom: 47px;
   min-height: 100vh;
 }
+
+
+//Block wrapper
+
+.view-block-wrapper {
+
+  max-width: inherit;
+  padding-bottom: 60px;
+  // margin-bottom: 20px;
+  border-bottom: 1px solid #f2f2f2;
+
+  .view-wrapper {
+    width: 100%;
+    padding: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 768px) {
+      padding: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+  }
+}

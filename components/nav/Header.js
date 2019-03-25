@@ -25,10 +25,8 @@ const Header = () => (
 	      {/*</Link>*/}
 	      {/*<Link href="/login">*/}
 	        <a href="/login" style={linkStyle.default}>Login</a>
-	      {/*</Link>*/}
-	      <Link href="/map">
-	        <a style={linkStyle.bold}>Become A Service Provider</a>
-	      </Link>
+					<a href="/sell-services" style={linkStyle.bold}>Sell Services</a>
+					<a href="/browse" style={linkStyle.default}>Browse</a>
 	    </div>
 		</header>
   </div>

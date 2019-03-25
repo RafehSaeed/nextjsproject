@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Icon } from 'semantic-ui-react'
 import Header from '../components/nav/Header'
 import Layout from '../components/nav/Layout'
 import { inject, observer } from 'mobx-react'
@@ -38,11 +39,10 @@ class Index extends React.Component {
 		return (
 			<Layout background="/static/backgrounds/tech.jpg">
 				<div className="container">
-					<span className="white-square"></span>
-{/*
-					<div className="body-text">{this.props.store.getName} we are currently under construction. :(</div> */}
 
-					{/*Categories */}
+
+					<span className="white-square"></span>
+
 					<div className="view view-categories">
 
 						<div><h2 className="view-title">Browse the list of services available in your <span>city.</span></h2></div>
@@ -84,6 +84,22 @@ class Index extends React.Component {
 							)}
 
 						</div>
+					</div>
+
+					<div className="view view-block-wrapper sign-up-cta">
+
+						<div className="column-half">	
+							<Icon circular size='big' color='purple' name='search' />		
+							<h2 className="view-title">Start Browing & Discover New Services!</h2>
+							<div className="view-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget porttitor odio. Donec accumsan mauris ut arcu accumsan, porttitor maximus tellus rutrum.</p></div>
+						</div>
+			
+						<div className="column-half">	
+							<Icon circular size='big' color='blue' name='users' />				
+							<a href="/sell-services"><h2 className="view-title">Become a Merchant</h2></a>
+							<div className="view-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget porttitor odio. Donec accumsan mauris ut arcu accumsan, porttitor maximus tellus rutrum.</p></div>
+						</div>
+
 					</div>
 
 				</div>

@@ -1,0 +1,42 @@
+.sign-up-cta {
+    // display: none;
+    overflow: hidden;
+
+    .column-half {
+
+        position: relative;
+        padding: 30px;
+        // display: none;
+        width: 100%;
+        float: left;
+        text-align: center;
+        &:last-child {
+            border-top: 1px solid #ddd;
+            border-right: none;
+
+            @media screen and (min-width: 768px) {
+                border-top: none;
+            }
+        }
+        @media screen and (min-width: 768px) {
+            width: 50%;
+            border-right: 1px solid #ddd;
+            border-top: none;
+        }
+
+        a {
+            margin: 0;
+            color: black;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .view-title {
+            margin: calc(2rem - .14285714em) 0 1rem;
+        }
+
+        .view-intro-text {
+            text-align: center;
+        }
+    }
+}

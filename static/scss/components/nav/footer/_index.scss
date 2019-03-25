@@ -4,9 +4,11 @@ footer {
 }
 
 .footer {
+  z-index: 200000000;
   position: absolute;
-  bottom: -40px;
+  // bottom: -50px;
   bottom: 0px;
+  // background-color: #e6e6e6;
   background-color: white;
   margin-top: 40px;
   box-sizing: border-box;
@@ -14,22 +16,29 @@ footer {
   width: 100%;
   margin: 0 auto;
   padding: 15px;
+  // padding: 55px;
   font-size: 16px;
   -webkit-box-shadow: 2px 5px 20px -13px rgba(0,0,0,0.55);
   -moz-box-shadow: 2px 5px 20px -13px rgba(0,0,0,0.55);
   box-shadow: 2px 5px 20px -13px rgba(0,0,0,0.55);
+  text-align: center;
+
+    p {
+      color: rgb(97, 97, 97);
+      // color: rgb(255, 19, 19);
+      font-size: 11px;
+    }
 }
-.footer p {
-  font-size: 12px;
-}
+
 @media screen and (min-width: 768px) {
   .footer {
-    padding: 15px;
+    // padding: 15px;
     border: 1px solid #DDD;
+    // margin-bottom: -29px;
+    p {
+        font-size: 14px;
+        margin-bottom: -5px;
+    }
   }
-}
-@media screen and (min-width: 920px) {
-  .footer p {
-    font-size: 16px;
-  }
+  
 }

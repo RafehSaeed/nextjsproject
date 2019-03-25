@@ -1,0 +1,52 @@
+
+  
+  .basic-page {
+
+    .field-image {
+      max-height: 400px;
+      overflow: hidden;
+      .hero-image {
+          margin-top: -290px;
+
+          @media screen and (min-width: 768px) {
+            margin-top: -1090px;
+          }
+      }
+    }
+
+    .page-with-sidebar {
+
+      margin: 40px auto;
+      max-width: 1200px;
+
+
+    }
+    .page-without-sidebar {
+      overflow: hidden;
+      margin: 0px auto;
+      max-width: 960px;
+      -webkit-box-shadow: 1px 1px 8px 0px rgba(219,219,219,1);
+      -moz-box-shadow: 1px 1px 8px 0px rgba(219,219,219,1);
+      box-shadow: 1px 1px 8px 0px rgba(219,219,219,1);
+
+      @media screen and (min-width: 768px) {
+        margin: 120px auto;
+      }
+      main {
+        .field-title {
+          margin-bottom: 40px;
+        }
+        padding: 30px;
+        background-color: white;
+        width: 100%;
+        @media screen and (min-width: 768px) {
+          padding: 90px;
+        }
+        p {
+          line-height: 1.73;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  

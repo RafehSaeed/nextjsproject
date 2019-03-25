@@ -4,6 +4,10 @@ header {
 }
 
 .header-container {
+      position: fixed;
+    /* margin-top: 50px; */
+    z-index: 10;
+    
   box-sizing: border-box;
   // max-width: 90%;
   margin: 0;
