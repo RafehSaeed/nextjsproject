@@ -167,7 +167,7 @@
   }
 
   .view-more {
-    border-style: none!important;
+    // border-style: none!important;
     // border-top: 1px solid #e2e2e2;
     transition: all 0.2s ease-out;
     margin-top: 40px;
@@ -182,17 +182,20 @@
     padding-top: 10px;
     padding-bottom: 10px;
     cursor: pointer;
-    border-bottom: 3px solid white;
-    background-color: #fd5a60;
+    // background-color: #fd5a60;
     // background-color: black;
     // background-color: #2CACFB;
     color: white;
+    color: black;
     border: none;
+    // border-top: 2px solid transparent;
 
     &:hover {
-      background-color: white;
-      color: white;
-      color: black;
+      // background-color: black;
+      // border-top: 2px solid #e2e2e2;
+      border-bottom: 6px solid #fd5a60;
+      // color: white;
+      // color: black;
       -webkit-box-shadow: 10px 20px 5px -22px rgba(97,97,97,1);
       -moz-box-shadow: 10px 20px 5px -22px rgba(97,97,97,1);
       box-shadow: 10px 20px 5px -22px rgba(97,97,97,1);
@@ -217,9 +220,10 @@
       margin-right: 25px;
       margin-bottom: inherit;
       text-align: left;
-      border-left: 2px solid #e2e2e2;
+      // border-left: 2px solid #e2e2e2;
 
       margin-left: auto;
+      border-bottom: 6px solid #80d418;
     }
 
 
