@@ -81,7 +81,7 @@ export default class LoginPage extends React.Component {
 								</div>
 								<br></br>
 								<Form.Checkbox label='Remember me for 30 days' />
-								<Button color='teal' content="Register" id="register_btn"  control={Button}>Continue loggin in with my email</Button>
+								<Button positive content="Register" id="register_btn"  control={Button}>Continue with my email</Button>
 							</Form>
 						</div>
 					</div>

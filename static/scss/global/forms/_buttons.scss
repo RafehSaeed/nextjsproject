@@ -1,0 +1,54 @@
+    .btn,
+    .ui.positive.button, .view-more {
+        background-color: transparent;
+        margin-right: 0;
+        transition: all 0.2s ease-out;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+        line-height: 1.23;
+        word-break: break-word;
+        line-height: 1.23;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        color: white;
+        color: black;
+        border: none;
+        text-align: center;
+        border: 2px solid black;
+        -webkit-box-shadow: 0px 3px 0px 0px rgba(133, 133, 133, 0.3);
+        -moz-box-shadow: 0px 3px 0px 0px rgba(133, 133, 133, 0.3);
+        box-shadow: 0px 3px 0px 0px rgba(133, 133, 133, 0.3);
+
+        &:hover,
+        &:focus, &:active {
+            background-color: #2CACFB;
+            color: white;
+            border: 2px solid rgb(0, 129, 209);
+            -webkit-box-shadow: 10px 20px 5px -22px rgba(97, 97, 97, 1);
+            -moz-box-shadow: 10px 20px 5px -22px rgba(97, 97, 97, 1);
+            box-shadow: 10px 20px 5px -22px rgba(97, 97, 97, 1);
+        }
+
+        @media screen and (min-width: 768px) {
+            font-size: 16px;
+            width: 60%;
+            max-width: 325px;
+            line-height: 1.23;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 20px;
+            // margin-right: 25px;
+            margin-bottom: inherit;
+            border: 2px solid black;
+            margin-left: auto;
+
+        }
+    }
